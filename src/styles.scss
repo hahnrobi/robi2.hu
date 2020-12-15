@@ -14,7 +14,7 @@
 	}
 	
 	.dark {
-		--bg: #1d1d1d;
+		--bg: #0D1117;
 		--menu: rgba(82,0,0,.4);
 		--menu-item: rgba(255,255,255,0.69);
 		--text-color: #aaa;
@@ -22,4 +22,5 @@
 body {
 	background: var(--bg);
 	color: var(--text-color);
+	min-height: 100vh;
 }

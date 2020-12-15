@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { ContentfulService } from "../contentful.service";
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { Entry } from "contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +25,8 @@ import { faCentercode } from '@fortawesome/free-brands-svg-icons';
     trigger('bgImgTrigger', [
       transition(":enter", [style({transform: 'scaleX(0) scaleY(0)'}), animate('500ms ease')])
     ])
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class PostSingleComponent implements OnInit {
 
@@ -37,10 +39,14 @@ export class PostSingleComponent implements OnInit {
   ngOnInit(): void {
     const postSlug = this.route.snapshot.paramMap.get("id");
     this.contentfulService.getPost(postSlug).then((post) => {
-      this.post = post;
-      this.loaded = true;
-      console.log(this.post);
-      console.log(this.post.fields.publishDate);
+      setTimeout(()=>{
+        this.post = post;
+        this.loaded = true;
+        console.log(this.post);
+        console.log(this.post.fields.publishDate);
+
+       }, 0)
+
     });
   }
   goBackToPosts() {
@@ -48,6 +54,7 @@ export class PostSingleComponent implements OnInit {
   }
 
   _returnHtmlFromRichText(richText:any) {
+
     if (richText === undefined || richText === null || richText.nodeType !== 'document') {
       return '<p>Error</p>';
     }

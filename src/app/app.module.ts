@@ -11,6 +11,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostSingleComponent } from './post-single/post-single.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoaderAnimationComponent } from './loader-animation/loader-animation.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
     AppComponent,
     PostListComponent,
     PostSingleComponent,
-    MdToHtmlPipe
+    MdToHtmlPipe,
+    LoaderAnimationComponent
   ],
   imports: [
     BrowserModule,

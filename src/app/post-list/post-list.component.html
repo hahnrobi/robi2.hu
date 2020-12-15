@@ -1,3 +1,7 @@
+<div class="loader" *ngIf="!this.loaded">
+  <app-loader-animation>
+    </app-loader-animation>
+</div>
 <div *ngIf="this.loaded">
   <div class="alert alert-info" role="alert" *ngFor="let post of this.posts" [@bgImgTrigger]="{params: {delay: 10000}}">
     <div class="d-flex flex-wrap flex-xl-wrap flex-lg-nowrap flex-md-nowrap">

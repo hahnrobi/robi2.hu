@@ -27,6 +27,7 @@ export class PostListComponent implements OnInit {
 
   posts: Entry<any>[] = [];
   loaded: boolean = false;
+  imageLoading: boolean = true;
 
   constructor(private router : Router, private contentfulService : ContentfulService) {
 

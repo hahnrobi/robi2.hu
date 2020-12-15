@@ -2,8 +2,11 @@
   <div class="alert alert-info" role="alert" *ngFor="let post of this.posts" [@bgImgTrigger]="{params: {delay: 10000}}">
     <div class="d-flex flex-wrap flex-xl-wrap flex-lg-nowrap flex-md-nowrap">
       <div class="p-2">
-        <a routerLink="/post/{{post.fields.slug}}">{{ post.fields.title }}</a>
-        <img style="width: 300px" src="{{post.fields.featuredImage.fields.file.url}}" />
+        <a routerLink="/{{post.fields.slug}}">{{ post.fields.title }}</a>
+        <div *ngIf="this.imageLoading" class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <img [hidden]="imageLoading" (load)="this.imageLoading = false;" style="width: 300px" src="{{post.fields.featuredImage.fields.file.url}}" />
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import {  fader } from './route-animations';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
+  styleUrls: ['./app.component.scss'],
   animations: [
     fader
   ]

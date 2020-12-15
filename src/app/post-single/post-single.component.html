@@ -4,9 +4,15 @@
 
 <div *ngIf="this.loaded">
 <article id="{{post.fields.slug}}" [@bgImgTrigger]>
-<h1>{{ post.fields.title }}</h1>
-<div class="author">
-  <img style="width: 64px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+<h1 class="post-title">{{ post.fields.title }}</h1>
+<div class="post-meta">
+  <div class="post-author">
+    <img style="width: 64px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+  </div>
+  <div class="post-date">
+    <fa-icon [icon]="faCalendarAlt"></fa-icon>
+    {{ post.fields.publishDate | date:'yyyy. LLL. dd.' }}
+  </div>
 </div>
 <div class="post-content" [innerHTML]="_returnHtmlFromRichText(post.fields.content)">
 

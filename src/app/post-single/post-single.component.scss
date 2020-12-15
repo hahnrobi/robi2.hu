@@ -1,5 +1,9 @@
-
-div.author {
+div.post-meta {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+}
+div.post-author {
   padding: 10px;
   color: #c90415 !important;
   font-family: "Roboto Condensed";
@@ -9,4 +13,20 @@ div.author {
     border-radius: 5000px;
     margin-right: 10px;
   }
+}
+div.post-date {
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 16px;
+  margin-left:20px;
+  color: #555;
+  fa-icon {
+    color: #bababa;
+    margin-right: 10px;
+  }
+}
+h1.post-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+
 }

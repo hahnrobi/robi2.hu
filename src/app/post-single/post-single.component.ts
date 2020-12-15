@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { ContentfulService } from "../contentful.service";
 import { Entry } from "contentful";
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import {
   trigger,
   transition,
@@ -13,6 +14,7 @@ import {
   animate,
   keyframes
 } from '@angular/animations';
+import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-post-single',
@@ -28,6 +30,7 @@ export class PostSingleComponent implements OnInit {
 
   post : Entry<any>;
   loaded: boolean = false;
+  faCalendarAlt = faCalendarAlt;
 
   constructor(private route: ActivatedRoute, private router: Router, private contentfulService: ContentfulService) { }
 
@@ -37,6 +40,7 @@ export class PostSingleComponent implements OnInit {
       this.post = post;
       this.loaded = true;
       console.log(this.post);
+      console.log(this.post.fields.publishDate);
     });
   }
   goBackToPosts() {

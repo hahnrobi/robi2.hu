@@ -1,0 +1,16 @@
+<div class="row" *ngIf="this.iFrameIsLoading">
+<div class="loader">
+  <app-loader-animation>
+    </app-loader-animation>
+</div>
+</div>
+<div class="row" [ngClass]="{show: !this.iFrameIsLoading, hide: this.iFrameIsLoading}">
+<div class="col-4 p-1">
+<iframe (load)="this.iFrameIsLoading = false;" src="https://discordapp.com/widget?id=272697999329722369&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+</div>
+<div class="col-8 p-3">
+  <h1>Gyere hozzánk <span class="red">kattogni!</span></h1>
+  <p>Ha mindig is vágytál egy helyre ahol meghallgatnak és a problémáid megoldásra találnak, akkor ez nem az a hely.</p>
+</div>
+
+</div>

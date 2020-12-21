@@ -12,13 +12,17 @@ import { PostSingleComponent } from './post-single/post-single.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoaderAnimationComponent } from './loader-animation/loader-animation.component';
+import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
+import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
 
 
 const routes: Routes = [
   { "path": "", redirectTo: "posts", pathMatch: "full" },
+  { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: 'isLeft'}},
   { "path": "posts", component: PostListComponent, data: {animation: 'isLeft'} },
   { "path": "post/:id", component: PostSingleComponent, data: {animation: 'isRight'}},
   { "path": ":id", component: PostSingleComponent, data: {animation: 'isRight'}}
+
 ];
 
 @NgModule({
@@ -27,7 +31,9 @@ const routes: Routes = [
     PostListComponent,
     PostSingleComponent,
     MdToHtmlPipe,
-    LoaderAnimationComponent
+    LoaderAnimationComponent,
+    DiscordWidgetPageComponent,
+    DarkModeSwitchComponent
   ],
   imports: [
     BrowserModule,

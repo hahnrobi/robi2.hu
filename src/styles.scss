@@ -8,11 +8,12 @@
 	--bg: #FFF;
 	--text-color: #212529;
 	--menu: rgba(255,255,255,.4);
-	--menu-item: rgba(61,61,61,0.69);
+  --menu-item: rgba(61,61,61,0.69);
+  --red: #c90415;
 	}
 	.light {
 	}
-	
+
 	.dark {
 		--bg: #0D1117;
 		--menu: rgba(82,0,0,.4);
@@ -22,5 +23,15 @@
 body {
 	background: var(--bg);
 	color: var(--text-color);
-	min-height: 100vh;
+  min-height: 100vh;
+  transition: background-color .3s;
+}
+.red {
+  color: var(--red);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed";
+}
+h1 {
+  font-weight: 700;
 }

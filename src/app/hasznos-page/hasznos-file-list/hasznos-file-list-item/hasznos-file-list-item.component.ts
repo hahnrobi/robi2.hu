@@ -44,7 +44,7 @@ downloadFile(uri:string,): void {
           if (x.type === HttpEventType.DownloadProgress) {
             if(x.total != undefined) {
             const percentDone = Math.round(100 * x.loaded / x.total);
-            this.dlProgress = "(" + percentDone + "%)";
+            this.dlProgress = " (" + percentDone + "%)";
             this.dlProgressPercent = percentDone;
             console.log(percentDone);
             }

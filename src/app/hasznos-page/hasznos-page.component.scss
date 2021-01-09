@@ -1,0 +1,13 @@
+.toolbar {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	margin-bottom: 20px;
+	input {
+		margin-right: 10px;
+	}
+	a.btn {
+		padding: 5px 15px 5px 15px;
+	}
+}

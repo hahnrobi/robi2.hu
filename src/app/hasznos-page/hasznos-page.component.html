@@ -1,8 +1,13 @@
+<div [@bgImgTrigger]>
 <h1>Ezen az oldalon hasznos cuccok lesznek.</h1>
 <p>Az alábbi oldalon különféle hasznos dolgokat találhatsz. Bizonyos fájlok nyilvánosak így már most megjelennek, míg bizonyos fájlok csak akkor listázhatók, ha megfelelő kulcsot adsz meg.</p>
 
-<label for="pwd">Kulcs:</label><input #pwd type="password" name="pwd"><br /><a class="btn" (click)="showFiles(pwd.value)">Nézzük!</a>
+<div class="toolbar">
+	<input placeholder="Ide írd a kulcsot." #pwd type="password" name="pwd" (keyup.enter)="showFiles(pwd.value)">
+	<a class="btn" (click)="showFiles(pwd.value)" >
+		Nézzük!
+	</a>
+</div>
 
-<div *ngIf="this.password != null">
 <app-hasznos-file-list [password]="password"></app-hasznos-file-list>
 </div>

@@ -1,6 +1,6 @@
 .file {
 	width: 100%;
-	max-width: 600px;
+	max-width: 700px;
 	margin: auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -13,11 +13,13 @@
 	.file-name {
 		font-weight: bold;
 		word-break: break-word;
-		width: 40%;
+		width: 35%;
+		margin-right: 5px;
 	}
 	.file-mime {
 		width: 20%;
 		word-break: break-word;
+		margin-right: 5px;
 	}
 	.file-size {
 		width: 10%;
@@ -48,11 +50,18 @@
 		font-weight: 500;
 		padding: 5px 10px 5px 10px;
 		position: relative;
-
-
+		text-decoration: none;
+		box-shadow: inset 0 0 0 0 var(--btn-hover);
+		&:hover {
+		  box-shadow: inset 200px 0 0 0 var(--btn-hover);
+		  color: white;
+		}
 		.dl-label {
 			z-index: 1;
-
+			text-decoration: none;
+			&:hover{
+				text-decoration: none;
+			}
 		}
 		.dl-bg {
 			background: var(--red);

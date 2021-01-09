@@ -5,17 +5,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 :root {
-	--bg: #FFF;
+  --bg: #FFF;
+  --post-list-item-bg: #FFF;
 	--text-color: #212529;
 	--menu: rgba(255,255,255,.4);
   --menu-item: rgba(61,61,61,0.69);
   --red: #c90415;
+  --btn: var(--red);
+  --btn-hover: #D12938;
+  --btn-light: transparent;
+  --btn-light-hover: #dfdfdf;
+  --red-light: #b34f58;
 	}
 	.light {
 	}
 
 	.dark {
-		--bg: #0D1117;
+    --bg: #0D1117;
+    --post-list-item-bg: #181818;
 		--menu: rgba(82,0,0,.4);
 		--menu-item: rgba(255,255,255,0.69);
 		--text-color: #aaa;
@@ -34,4 +41,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-weight: 700;
+}
+.btn {
+  background: var(--btn);
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: inset 0 0 0 0 var(--btn-hover);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+  border: 0;
+  border-radius: 0;
+  font-weight: 500;
+  padding: 15px 30px 15px 30px;
+  &:hover {
+    box-shadow: inset 400px 0 0 0 var(--btn-hover);
+    color: white;
+  }
+}
+.btn-light {
+  @extend .btn;
+  background: var(--btn-light);
+  color: var(--text-color);
+  box-shadow: none;
+  &:hover {
+    box-shadow: none;
+    background: var(--btn-light-hover);
+    color:var(--text-color);
+  }
 }

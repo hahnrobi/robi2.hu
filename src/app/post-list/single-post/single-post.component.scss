@@ -1,0 +1,128 @@
+article:hover {
+  div.hover-overlay, .image-hover-icon {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  div.post-details {
+    opacity: .85 !important;
+  }
+}
+.post-reverse {
+  flex-direction: row-reverse;
+}
+article {
+  background: var(--post-list-item-bg);
+  box-shadow: 0px 15px 45px -9px rgba(0,0,0,0.20);
+  margin-bottom: 20px;
+  max-width: 850px;
+  margin: auto;
+  transition: .4s all ease-in-out;
+  border-radius: 3px;
+  position: relative;
+  &:hover {
+    box-shadow: 0px 5px 25px -3px rgba(0,0,0,0.20);
+
+  }
+  a {
+    text-decoration: none !important;
+  }
+  /*TITLE*/
+  h1 {
+    font-size: 1.8em;
+    color: var(--red);
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .post-meta {
+    color: var(--menu-item);
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: .9em;
+    margin-bottom: 15px;
+    img {
+      margin-right: 15px;
+    }
+    .post-date {
+      fa-icon {
+        margin-left: 30px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .post-details, .featured-image {
+    width: 50%;
+    transition: .4s all ease-in-out;
+  }
+
+  .post-excerpt {
+    font-size: .9em;
+    color: var(--menu-item);
+  }
+  div.post-author {
+    img {border-radius: 50000px;}
+  }
+  div.featured-image {
+    max-width: 50%;
+    width: 50%;
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    div.hover-overlay {
+      width: 100%;
+      height: 100%;
+      background: var(--red);
+      mix-blend-mode: multiply;
+      opacity: 0;
+      transition: .5s all ease-in-out;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .image-hover-icon {
+      font-size: 3rem;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: white;
+      opacity: 0;
+      z-index: 10;
+      transition: .5s all ease-in-out;
+      transform: translateY(-10px);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      fa-icon {
+        display: block;
+        opacity: .8;
+      }
+      p {
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        opacity: .8;
+
+      }
+    }
+  }
+
+}

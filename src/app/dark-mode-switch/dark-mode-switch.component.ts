@@ -27,7 +27,7 @@ export class DarkModeSwitchComponent implements OnInit {
     if (lsItem != null && this.validLightModes.includes(lsItem as string)) {
       return lsItem as string;
     }
-    return "";
+    return this.validLightModes[0];
   }
   setNightModeStatus(status: string) {
     if(this.validLightModes.includes(status)) {

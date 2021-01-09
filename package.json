@@ -26,6 +26,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@types/marked": "^1.2.0",
+    "angular-emojify": "^1.0.0",
     "bootstrap": "^4.5.3",
     "contentful": "^7.15.0",
     "marked": "^1.2.5",

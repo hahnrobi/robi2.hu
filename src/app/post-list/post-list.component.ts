@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ContentfulService } from "../contentful.service";
 import { Entry } from "contentful";
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { Title } from '@angular/platform-browser';
 import {
   trigger,
   transition,
@@ -28,9 +30,10 @@ export class PostListComponent implements OnInit {
   posts: Entry<any>[] = [];
   loaded: boolean = false;
   imageLoading: boolean = true;
+  faCalendarAlt = faCalendarAlt;
 
-  constructor(private router : Router, private contentfulService : ContentfulService) {
-
+  constructor(private router : Router, private contentfulService : ContentfulService, private titleService:Title) {
+    this.titleService.setTitle("Posztok");
   }
 
   ngOnInit(): void {

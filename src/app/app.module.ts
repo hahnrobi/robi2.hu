@@ -14,6 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoaderAnimationComponent } from './loader-animation/loader-animation.component';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
+import { SinglePostComponent } from './post-list/single-post/single-post.component';
+import { EmojiPipePipe } from './emoji-pipe.pipe';
 
 
 const routes: Routes = [
@@ -33,7 +35,9 @@ const routes: Routes = [
     MdToHtmlPipe,
     LoaderAnimationComponent,
     DiscordWidgetPageComponent,
-    DarkModeSwitchComponent
+    DarkModeSwitchComponent,
+    SinglePostComponent,
+    EmojiPipePipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+<a routerLink="/{{post.fields.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
+<article>
+  <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap align-items-center justify-content-center justify-content-xl-start justify-content-lg-start justify-content-md-start" [ngClass]="{'post-reverse': this.index % 2 == 0}">
+    <div class="featured-image" [ngStyle]="{'background-image': 'url('+this.featuredImage+')'}">
+      <div class="image-hover-icon">
+        <fa-icon [icon]="faBookOpen" ></fa-icon>
+        <p>Elolvasom 😉</p>
+    </div>
+      <app-loader-animation  *ngIf="this.imageLoading" ></app-loader-animation>
+      <div class="hover-overlay"></div>
+      <img class="featured-image-preload" (load)="this.imageLoading = false; this.setFeaturedImage()" style="display: none" src="{{ this.featuredImage }}" />
+    </div>
+    <div class="p-5 post-details">
+      <div class="post-meta d-flex align-items-center">
+        <div class="post-author">
+          <img style="width: 32px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+        </div>
+        <div class="post-date">
+          <fa-icon [icon]="faCalendarAlt"></fa-icon>
+          {{ post.fields.publishDate | date:'yyyy. LLL. dd.' }}
+        </div>
+      </div>
+      <h1>{{ post.fields.title }}</h1>
+      <p class="post-excerpt">
+        {{post.fields.excerpt}}
+      </p>
+    </div>
+
+  </div>
+</article>
+</a>

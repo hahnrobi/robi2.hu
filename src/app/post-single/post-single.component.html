@@ -2,23 +2,36 @@
   <app-loader-animation>
     </app-loader-animation>
 </div>
-<div *ngIf="this.loaded">
-  <button class="btn" (click)="goBackToPosts()">Vissza </button>
+<div *ngIf="this.loaded" style="margin-top: 10px">
+<button class="btn-light mb-2" (click)="goBackToPosts()">Vissza a posztokhoz</button>
 <article id="{{post.fields.slug}}" [@bgImgTrigger]>
-<h1 class="post-title">{{ post.fields.title }}</h1>
-<div class="post-meta">
-  <div class="post-author">
-    <img style="width: 64px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+<div *ngIf="this.hasFeaturedImage" class="featured-image" style="background-image: url('{{ post.fields.featuredImage.fields.file.url }}')">
+  <img src="{{post.fields.featuredImage.fields.file.url}}" style="display: none" (load)="this.isFeaturedImageLoaded = true" />
+  <app-loader-animation *ngIf="!this.isFeaturedImageLoaded"></app-loader-animation>
+  <p class="article-featured-image-copyright" [innerHTML]="post.fields.featuredImageCopyrightText"></p>
+</div>
+<div class="article-inner">
+
+  <h1 class="post-title">{{ post.fields.title }}</h1>
+  <div class="post-meta">
+    <div class="post-author">
+      <img style="width: 64px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+    </div>
+    <div class="post-date">
+      <fa-icon [icon]="faCalendarAlt"></fa-icon>
+      {{ post.fields.publishDate | date:'yyyy. LLL. dd.' }}
+    </div>
   </div>
-  <div class="post-date">
-    <fa-icon [icon]="faCalendarAlt"></fa-icon>
-    {{ post.fields.publishDate | date:'yyyy. LLL. dd.' }}
+  <div class="post-content" [innerHTML]="_returnHtmlFromRichText(post.fields.content)">
+
   </div>
 </div>
-<div class="post-content" [innerHTML]="_returnHtmlFromRichText(post.fields.content)">
-
-</div>
-
 </article>
+<div class="blog-info">
+  <h3>Mi is ez a <span class="red">robi2.hu</span>?</h3>
+  <p>A robi2.hu oldal az én személyes weboldalam/blogom. Az itt található anyagok mind azt a célt szolgálják, hogy különféle hasznos információkat nyilvánosan, lehetőleg minél egyszerűbben összefoglalva megosszak veled.</p>
+  <p>Az itt megtalálható anyagok saját készítésűek, azonban előfordulhatnak külső forrásból származó illusztrációk, melyek forrását minden esetben mellette megtalálod.</p>
+  <p>Az oldal bármiféle támogatás nélkül működik, nem kérlek hogy bármilyen formában támogass, de amennyiben a tartalmat hasznosnak találtad, örülök ha azt megosztod velem.</p>
+</div>
 </div>
 

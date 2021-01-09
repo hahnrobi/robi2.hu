@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,14 +17,19 @@ import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
 import { SinglePostComponent } from './post-list/single-post/single-post.component';
 import { EmojiPipePipe } from './emoji-pipe.pipe';
+import { HasznosPageComponent } from './hasznos-page/hasznos-page.component';
+import { HasznosFileListComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list.component';
+import { HasznosFileListItemComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list-item/hasznos-file-list-item.component';
 
 
 const routes: Routes = [
   { "path": "", redirectTo: "posts", pathMatch: "full" },
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: 'isLeft'}},
+  { "path": "hasznos", component: HasznosPageComponent, data: {animation: 'isRight'}},
   { "path": "posts", component: PostListComponent, data: {animation: 'isLeft'} },
   { "path": "post/:id", component: PostSingleComponent, data: {animation: 'isRight'}},
   { "path": ":id", component: PostSingleComponent, data: {animation: 'isRight'}}
+
 
 ];
 
@@ -37,12 +43,16 @@ const routes: Routes = [
     DiscordWidgetPageComponent,
     DarkModeSwitchComponent,
     SinglePostComponent,
-    EmojiPipePipe
+    EmojiPipePipe,
+    HasznosPageComponent,
+    HasznosFileListComponent,
+    HasznosFileListItemComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     FontAwesomeModule

@@ -1,0 +1,19 @@
+<div class="file">
+	<div class="file-name">
+		{{ file.name }}
+	</div>
+	<div class="file-mime">
+		{{ file.mime }}
+	</div>
+	<div class="file-size">
+		{{ file.size }}
+	</div>
+	<a class="dl-button-container">
+		<a class="dl-btn" (click)="this.downloadFile(file.name)">
+			<span class="dl-label">Letöltés</span>
+			<div class="dl-progress" [style.width.%]="dlProgressPercent"></div>
+			<div class="dl-bg" ></div>
+		</a>
+		<div class="dl-meter"></div>
+	</a>
+</div>

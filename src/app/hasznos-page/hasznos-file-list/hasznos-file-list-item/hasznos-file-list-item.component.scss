@@ -1,0 +1,86 @@
+.file {
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid #eee;
+	align-items: center;
+	justify-content: center;
+	color: #888;
+	.file-name {
+		font-weight: bold;
+		word-break: break-word;
+		width: 40%;
+	}
+	.file-mime {
+		width: 20%;
+		word-break: break-word;
+	}
+	.file-size {
+		width: 10%;
+	}
+
+}
+
+.dl-button-container {
+	margin-left: 5px;
+	min-width: 100px;
+	position: relative;
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+	.dl-btn {
+		text-align: center;
+		display: block;
+		color: white;
+		cursor: pointer;
+		text-transform: uppercase;
+		position: relative;
+		-webkit-transition: ease-out 0.4s;
+		-moz-transition: ease-out 0.4s;
+		transition: ease-out 0.4s;
+		border: 0;
+		border-radius: 0;
+		font-weight: 500;
+		padding: 5px 10px 5px 10px;
+		position: relative;
+
+
+		.dl-label {
+			z-index: 1;
+
+		}
+		.dl-bg {
+			background: var(--red);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			z-index: -2;
+		}
+		.dl-progress {
+			background: rgba(255,255,255,.4);
+			width: 0%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			-webkit-transition: ease-out 0.1s;
+			-moz-transition: ease-out 0.1s;
+			transition: ease-out 0.1s;
+		}
+	}
+}
+.dl-meter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: white;
+	height: 3px;
+}

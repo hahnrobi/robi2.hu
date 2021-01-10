@@ -1,6 +1,6 @@
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-discord-widget-page',
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscordWidgetPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceTitle:Title) { }
 
   iFrameIsLoading = true;
   faUserPlus = faUserPlus;
@@ -20,7 +20,14 @@ export class DiscordWidgetPageComponent implements OnInit {
   currentChar = 0;
   textDeleting = false;
 
-  welcomeText = "";
+  private _welcomeText: string = "";
+  get welcomeText(): string {
+      return this._welcomeText;
+  }
+  set welcomeText(value: string) {
+      this._welcomeText = value;
+      this.serviceTitle.setTitle("Gyere hozzánk " + value);
+  }
 
   ngOnInit(): void {
     this.texts = this.shuffle(this.texts);

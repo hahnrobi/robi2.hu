@@ -9,6 +9,12 @@ div.post:hover {
 }
 .post-reverse {
   flex-direction: row-reverse;
+  div.featured-image {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
 }
 div.post {
   background: var(--post-list-item-bg);
@@ -33,6 +39,7 @@ div.post {
     text-decoration: none;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-weight: 600;
   }
   .post-meta {
     color: var(--menu-item);
@@ -45,7 +52,7 @@ div.post {
     }
     .post-date {
       fa-icon {
-        margin-left: 30px;
+        margin-left: 10px;
         margin-right: 10px;
       }
     }
@@ -65,6 +72,7 @@ div.post {
   div.featured-image {
     max-width: 50%;
     width: 50%;
+    
     height: 300px;
     background-position: center center;
     background-size: cover;

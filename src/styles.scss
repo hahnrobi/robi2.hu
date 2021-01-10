@@ -8,8 +8,8 @@
   --bg: #FFF;
   --post-list-item-bg: #FFF;
 	--text-color: #212529;
-	--menu: rgba(255,255,255,.4);
-  --menu-item: rgba(61,61,61,0.69);
+	--menu: rgba(255,255,255,.9);
+  --menu-item: rgba(61,61,61,1);
   --red: #c90415;
   --btn: var(--red);
   --btn-hover: #D12938;
@@ -74,3 +74,6 @@ h1 {
     color:var(--text-color);
   }
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

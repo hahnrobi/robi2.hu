@@ -5,11 +5,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" [ngStyle]="{'display': isCollapsed ? 'block' : 'none' }" id="navbarSupportedContent">
     <ul class="navbar-nav nav mr-auto justify-content-center">
       <li class="nav-item active">
         <a class="nav-link" routerLink="/posts" routerLinkActive="current">Blog</a>
@@ -37,5 +37,18 @@
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
 <footer>
-  &copy; 2020 hahnr
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 d-flex align-items-center">
+            2021 Hahn Róbert
+          </div>
+          <div class="col-sm-12 col-md-6 d-flex justify-content-end social-icons" >
+            <a href="//facebook.com/hahnrobi" target="_blank"><fa-icon [icon]="footerIcons[0]"></fa-icon></a>
+            <a href="//youtube.com/robi2studio" target="_blank"><fa-icon [icon]="footerIcons[1]"></fa-icon></a>
+            <a href="//twitter.com/hahnrobi_" target="_blank"><fa-icon [icon]="footerIcons[2]"></fa-icon></a>
+            <a href="//flickr.com/hahnrobi" target="_blank"><fa-icon [icon]="footerIcons[3]"></fa-icon></a>
+            <a href="https://open.spotify.com/user/11125460307" target="_blank"><fa-icon [icon]="footerIcons[4]"></fa-icon></a>
+          </div>
+        </div>
+      </div>
 </footer>

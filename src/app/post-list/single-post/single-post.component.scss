@@ -1,4 +1,4 @@
-article:hover {
+div.post:hover {
   div.hover-overlay, .image-hover-icon {
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -10,7 +10,7 @@ article:hover {
 .post-reverse {
   flex-direction: row-reverse;
 }
-article {
+div.post {
   background: var(--post-list-item-bg);
   box-shadow: 0px 15px 45px -9px rgba(0,0,0,0.20);
   margin-bottom: 20px;

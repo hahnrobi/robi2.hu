@@ -1,5 +1,5 @@
 <a routerLink="/{{post.fields.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
-<article>
+<div class="post">
   <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap align-items-center justify-content-center justify-content-xl-start justify-content-lg-start justify-content-md-start" [ngClass]="{'post-reverse': this.index % 2 == 0}">
     <div class="featured-image" [ngStyle]="{'background-image': 'url('+this.featuredImage+')'}">
       <div class="image-hover-icon">
@@ -27,5 +27,5 @@
     </div>
 
   </div>
-</article>
+</div>
 </a>

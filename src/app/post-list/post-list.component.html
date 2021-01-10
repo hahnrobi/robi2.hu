@@ -7,3 +7,8 @@
   <app-single-post [post]="post" [index]="i" class="post-container"></app-single-post>
 </div>
 </div>
+<ul class="pagination" *ngIf="this.pagesNum.length > 1">
+  <li *ngFor="let i of this.pagesNum" (click)="changePage(i)" [ngClass]="{'pagination-active' : i==this.currentPage}">
+    {{i+1}}
+  </li>
+</ul>

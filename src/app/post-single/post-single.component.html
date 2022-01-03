@@ -3,7 +3,7 @@
     </app-loader-animation>
 </div>
 <div *ngIf="this.loaded" style="margin-top: 10px">
-<button class="button mb-2" (click)="goBackToPosts()">Vissza a posztokhoz</button>
+<button [routerLink]="['/posts']" class="button mb-2">Vissza a posztokhoz</button>
 <article id="{{post.fields.slug}}" [@bgImgTrigger]>
 <div *ngIf="this.hasFeaturedImage" class="featured-image" style="background-image: url('{{ post.fields.featuredImage.fields.file.url }}')">
   <img src="{{post.fields.featuredImage.fields.file.url}}" style="display: none" (load)="this.isFeaturedImageLoaded = true" />

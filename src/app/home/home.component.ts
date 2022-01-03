@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,9 +11,10 @@ export class HomeComponent implements OnInit {
 
   iconFaLink = faLink;
 
-  constructor() { }
+  constructor(private serviceTitle:Title) { }
 
   ngOnInit(): void {
+    this.serviceTitle.setTitle("Hahn Róbert");
   }
 
 }

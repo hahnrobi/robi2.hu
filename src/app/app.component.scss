@@ -8,34 +8,83 @@
   right: 10px;
   top: 10px;
 }
+.main-container {
+	min-height: calc(100vh - 41px);
+}
+.menu-col {
+	width: 100%;
+	max-width: 300px
+}
 .nav-item{
 	font-family: "Raleway", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 nav {
 	background: var(--menu) !important;
-	border-bottom: 1px solid rgba(0,0,0,.08);
+	border-radius: 5px;
 	position: sticky;
 	top: 0;
   	z-index: 10;
+	.menu-title {
+		display: block;
+		width: 100%;
+		color: var(--red);
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: 1rem;
+	}
 	ul.navbar-nav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		line-height: 40px;
+        transition: .3s all;
 		margin: auto;
 		li {
+			display: block;
+			width: 50%;
+			animation-name: menuIn;
+			animation-duration: .5s;
+			animation-iteration-count: 1;
+			animation-timing-function: cubic-bezier(.17,.67,.44,1.01);
+			animation-fill-mode: backwards;
+			&:nth-of-type(2) {
+				animation-delay: .1s;
+			}
+			&:nth-of-type(3) {
+				animation-delay: .2s;
+			}
+			&:nth-of-type(4) {
+				animation-delay: .3s;
+			}
+			&:nth-of-type(5) {
+				animation-delay: .4s;
+			}
+			&:nth-of-type(6) {
+				animation-delay: .5s;
+			}
+			&:nth-of-type(7) {
+				animation-delay: .6s;
+			}
 			a {
-				color: var(--menu-item);
-				text-transform: uppercase;
-				font-weight: 700;
-				font-size: 14px;
-        line-height: 40px;
-        transition: .3s all;
-        &:hover {
-          color: var(--red-light);
-        }
-      }
-      .current {
-        color: var(--red);
-      }
-			padding-left: 15px;
-			padding-right: 15px;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					color: var(--menu-item);
+					text-transform: uppercase;
+					font-weight: 700;
+					font-size: 14px;
+					border-radius: 5px;;
+					transition: .2s all;;
+				&:hover {
+				color: var(--red-light);
+				background: var(--red-lightest);
+				}
+			}
+			.current {
+				color: var(--red);
+			}
 		}
 	}
 }
@@ -58,3 +107,7 @@ footer {
 		}
 	}
 }
+@keyframes menuIn {
+	from {transform: scale(0,0)}
+	to {transform: scale(1,1)}
+  }

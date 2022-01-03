@@ -14,6 +14,7 @@ export class DiscordWidgetPageComponent implements OnInit {
   iFrameIsLoading = true;
   faUserPlus = faUserPlus;
 
+  doDraw = true;
 
   texts = ["LoLozni!", "rotyogtatni a minimált!", "hallgatni a Balázsék porszívóját?!", "kattogni!"];
   currentText = 0;
@@ -33,6 +34,9 @@ export class DiscordWidgetPageComponent implements OnInit {
     this.texts = this.shuffle(this.texts);
     this.checkLoadedStatusToStartWelcomeTexts();
   }
+  ngOnDestroy(): void {
+    this.doDraw = false;
+  }
   checkLoadedStatusToStartWelcomeTexts(): void {
     if(true) {
       this.drawWelcomeTexts();
@@ -41,6 +45,7 @@ export class DiscordWidgetPageComponent implements OnInit {
     }
   }
   drawWelcomeTexts(): void {
+    if(!this.doDraw) return;
     if(this.currentText >= this.texts.length) {
       this.currentText = 0;
       this.currentChar = 0;

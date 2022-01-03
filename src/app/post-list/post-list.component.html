@@ -1,10 +1,13 @@
+<h1>Blog</h1>
 <div class="loader" *ngIf="!this.loaded">
   <app-loader-animation>
     </app-loader-animation>
 </div>
 <div *ngIf="this.loaded" class="blog-post-list mt-5 mb-5">
-<div *ngFor="let post of this.posts; let i = index" [attr.data.index]="i" [@bgImgTrigger]="{params: {delay: 10000}}">
+  <div class="post-main" [@postAnimation]="this.posts.length">
+<div *ngFor="let post of this.posts; let i = index" [attr.data.index]="i">
   <app-single-post [post]="post" [index]="i" class="post-container"></app-single-post>
+</div>
 </div>
 </div>
 <ul class="pagination" *ngIf="this.pagesNum.length > 1">

@@ -1,43 +1,63 @@
-<div class="container-fluid" style="box-sizing: border-box; padding: 20px; height: 130px; background-image: url('assets/images/red_diamond_detail.jpg')">
-  <a [routerLink]="['/']"><img src="/assets/images/logo-01.png" class="logo" /></a>
-  <dark-mode-switch class="dark-mode-switch"></dark-mode-switch>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" [ngStyle]="{'display': isCollapsed ? 'block' : 'none' }" id="navbarSupportedContent">
-    <ul class="navbar-nav nav mr-auto justify-content-center">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/about" routerLinkActive="current">Magamról</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/posts" routerLinkActive="current">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://iva.hu">IVA Media</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/discord" routerLinkActive="current">Discord</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Referenciák</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Extrák</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/hasznos" routerLinkActive="current">Hasznos</a>
-      </li>
-    </ul>
+<div class="main-container container-fluid p-5">
+  <div class="row">
+    <div class="col menu-col order-first order-md-last">
+      <nav>
+        <div class="container">
+            <span class="menu-title">Menü</span>
+            <dark-mode-switch class="dark-mode-switch"></dark-mode-switch>
+            <ul class="navbar-nav nav mr-auto justify-content-center">
+              <li class="nav-item active p-1">
+                <a class="nav-link p-3" routerLink="/about" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[0]"></fa-icon>
+                  Magamról
+                </a>
+              </li>
+              <li class="nav-item active p-1">
+                <a class="nav-link p-3" routerLink="/posts" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[1]"></fa-icon>
+                  Blog
+                </a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" href="https://iva.hu">
+                  <fa-icon [icon]="menuIcons[2]"></fa-icon>
+                  IVA Media
+                </a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" routerLink="/discord" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[3]"></fa-icon>
+                  Discord
+                </a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" routerLink="portfolio" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[4]"></fa-icon>
+                  Referenciák
+                </a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" href="#">
+                  <fa-icon [icon]="menuIcons[5]"></fa-icon>
+                  Extrák
+                </a>
+              </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" routerLink="/hasznos" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[6]"></fa-icon>
+                  Hasznos
+                </a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <div class="container m-0" [@routeAnimations]="prepareRouter(outlet)" style="position: relative">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </div>
   </div>
-</div>
-</nav>
-<div class="container main-content">
-  <router-outlet #outlet="outlet"></router-outlet>
 </div>
 <footer>
       <div class="container">

@@ -6,12 +6,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 @Component({
   selector: 'app-hasznos-page',
   templateUrl: './hasznos-page.component.html',
-  styleUrls: ['./hasznos-page.component.scss'],
-  animations: [
-    trigger('bgImgTrigger', [
-      transition(":enter", [style({transform: 'scaleX(0) scaleY(0)'}), animate('500ms ease')])
-    ])
-  ],
+  styleUrls: ['./hasznos-page.component.scss']
 })
 export class HasznosPageComponent implements OnInit {
 

@@ -21,6 +21,8 @@ import { HasznosPageComponent } from './hasznos-page/hasznos-page.component';
 import { HasznosFileListComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list.component';
 import { HasznosFileListItemComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list-item/hasznos-file-list-item.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 
@@ -38,7 +40,9 @@ import { HomeComponent } from './home/home.component';
     HasznosPageComponent,
     HasznosFileListComponent,
     HasznosFileListItemComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,

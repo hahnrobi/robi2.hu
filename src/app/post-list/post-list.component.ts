@@ -12,7 +12,8 @@ import {
   group,
   animateChild,
   animate,
-  keyframes
+  keyframes,
+  stagger
 } from '@angular/animations';
 
 @Component({
@@ -20,8 +21,30 @@ import {
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss'],
   animations: [
-    trigger('bgImgTrigger', [
-      transition(":enter", [style({transform: 'translateX(-100px)', opacity: 0}), animate('500ms ease')])
+    trigger('postAnimation', [
+      transition('* => *', [
+        query(':leave', [
+          stagger(
+            0, [
+              animate('0s .1s cubic-bezier(.17,.67,.44,1.01)', style({
+                opacity: 0
+              }))
+            ]
+          )
+        ], {optional: true}),
+        query(':enter', [
+          style({
+            transform: 'translateX(-4rem)',
+            opacity: 0
+          }),
+          stagger(200, [
+            animate('0.5s 0.2s cubic-bezier(.17,.67,.44,1.01)', style({
+              transform: 'translateX(0rem)',
+              opacity: 1
+            }))
+          ])
+        ], {optional: true})
+      ])
     ])
   ]
 })

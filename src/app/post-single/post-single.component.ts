@@ -44,6 +44,9 @@ export class PostSingleComponent implements OnInit {
   ngOnInit(): void {
     const postSlug = this.route.snapshot.paramMap.get("id");
     this.contentfulService.getPost(postSlug).then((post) => {
+      if(post === undefined || post === null) {
+        this.router.navigate(["404"]);
+      }
       setTimeout(()=>{
         this.post = post;
         this.serviceTitle.setTitle(this.post.fields.title);
@@ -58,10 +61,9 @@ export class PostSingleComponent implements OnInit {
 
        }, 0)
 
+    }).catch(err => {
+      this.router.navigate(["404"]);
     });
-  }
-  goBackToPosts() {
-    this.router.navigate([""]);
   }
 
   _returnHtmlFromRichText(richText:any) {

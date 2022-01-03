@@ -1,32 +1,31 @@
-import {
-  trigger,
-  transition,
-  style,
-  query,
-  group,
-  animateChild,
-  animate,
-  keyframes
-} from '@angular/animations';
+import {trigger, transition, style, query, group, animateChild, animate, keyframes} from '@angular/animations';
 
-export const fader = trigger('routeAnimations', [
-  transition('* <=> *', [
-    query(':enter, :leave', [
-      style({
-        /*position: 'absolute',
-        left: 0,
-        width: '100%',
-        opacity: 0,
-        transform: 'scale(0) translateY(100%)',*/
-      })
-    ]),
-    query(':enter', [
-      animate('600ms ease',
-        style({
-          /*opacity: 1,
-          transform: 'scale(1) translateY(0)'*/
-        })
-      )
+export const blurer = trigger('routeAnimations', [
+    transition('* <=> *', [
+        query(":enter, :leave", [
+            style({
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                opacity: 0,
+                filter: "blur(20px)"
+            })
+        ]),
+        query(':enter', [
+            animate('200ms ease',
+                style({
+                    opacity: 1,
+                    filter: "blur(0px)"
+                })
+            )
+        ]),
+        query(':leave', [
+          animate('200ms ease',
+              style({
+                  opacity: 0,
+                  filter: "blur(20px)"
+              })
+          )
+      ])
     ])
-  ]),
-]);
+])

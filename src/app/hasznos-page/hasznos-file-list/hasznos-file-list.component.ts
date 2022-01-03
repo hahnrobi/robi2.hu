@@ -31,7 +31,7 @@ export class HasznosFileListComponent implements OnInit, OnChanges {
         'Authorization': 'Bearer ' + password
       })
     };
-    this.http.get<File>("/api/list", httpOptions).subscribe((data:any) => {this.files = data; this.filesLoaded = true;});
+    this.http.get<File>("/hasznos-files", httpOptions).subscribe((data:any) => {this.files = data; this.filesLoaded = true;});
   }
     
 

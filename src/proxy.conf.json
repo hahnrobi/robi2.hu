@@ -1,12 +1,7 @@
 {
-    "/api/list": {
-        "target": "http://localhost/hasznos/index.php",
-        "secure": false,
-        "logLevel": "debug"
-    },
-    "/api/get": {
-        "target": "http://localhost/hasznos/getfile.php",
-        "secure": false,
+    "/hasznos-files": {
+        "target": "//robi2.hu/hasznos-files/index.php",
+        "secure": true,
         "logLevel": "debug"
     }
 }

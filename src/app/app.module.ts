@@ -20,18 +20,9 @@ import { EmojiPipePipe } from './emoji-pipe.pipe';
 import { HasznosPageComponent } from './hasznos-page/hasznos-page.component';
 import { HasznosFileListComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list.component';
 import { HasznosFileListItemComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list-item/hasznos-file-list-item.component';
+import { HomeComponent } from './home/home.component';
 
 
-const routes: Routes = [
-  { "path": "", redirectTo: "posts", pathMatch: "full" },
-  { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: 'isLeft'}},
-  { "path": "hasznos", component: HasznosPageComponent, data: {animation: 'isRight'}},
-  { "path": "posts", component: PostListComponent, data: {animation: 'isLeft'} },
-  { "path": "post/:id", component: PostSingleComponent, data: {animation: 'isRight'}},
-  { "path": ":id", component: PostSingleComponent, data: {animation: 'isRight'}}
-
-
-];
 
 @NgModule({
   declarations: [
@@ -46,7 +37,8 @@ const routes: Routes = [
     EmojiPipePipe,
     HasznosPageComponent,
     HasznosFileListComponent,
-    HasznosFileListItemComponent
+    HasznosFileListItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +46,7 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    
     FontAwesomeModule
   ],
   providers: [ContentfulService],

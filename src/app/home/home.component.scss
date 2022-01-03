@@ -1,0 +1,57 @@
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+.highlight {
+    color: var(--red);
+}
+.profile-pic {
+    border-radius: 300px;
+}
+ul.tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    li {
+        background: var(--red);
+        padding: 5px 10px;
+        border-radius: 3px;
+        margin: 3px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+
+    }
+    li:last-of-type {
+        background: none;
+        color: var(--text-color);
+        text-transform: none;
+    }
+}
+.websites-list {
+    a, a:active, a:visited, a:hover {
+        text-decoration: none;
+    }
+    .website-card {
+        background: var(--bg);
+        color: var(--red);
+        box-shadow: 0px 1px 20px -2px #00000054;
+        border-radius: 5px;
+        transition: .2s all;
+        &:hover {
+            opacity: .7;
+            transform: translate(0,-.5rem);
+        }
+        h3 {
+            color: var(--text-color);
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+        }
+        .icon {
+            font-size: 1.5rem;
+        }
+    }
+}

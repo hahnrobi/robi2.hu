@@ -4,12 +4,7 @@
 </div>
 </div>
 <div class="row">
-<div class="col-lg-4 col-md-12 p-3 d-flex align-items-center justify-content-center" style="min-height: 500px">
-  <app-loader-animation *ngIf="this.iFrameIsLoading">
-  </app-loader-animation>
-<iframe [ngClass]="{show: !this.iFrameIsLoading, hide: this.iFrameIsLoading}" (load)="this.iFrameIsLoading = false; " src="https://discordapp.com/widget?id=272697999329722369&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-</div>
-<div class="col-lg-8 col-md-12 p-5">
+<div class="col-12 p-5">
   <h1>Gyere hozzánk <span class="red">{{ this.welcomeText }}<span class="cursor"></span></span></h1>
   <p class="m-1 mt-4">Ha mindig is vágytál egy helyre ahol meghallgatnak és a problémáid megoldásra találnak, akkor ez nem az a hely.</p>
   <p class="m-1">Ettől függetlenül örömmel látunk köreinkben bármikor!<br />Kattints az alábbi gombra a csatlakozáshoz:</p>

@@ -20,6 +20,19 @@ export class PortfolioComponent implements OnInit {
     }
     return this.portfolio;
   }
+  public getCategoryTitle(category:string) {
+    switch(category) {
+      case "video":
+        return "Videó"
+        break;
+      case "graphics":
+        return "Grafika"
+        break;
+      case "website":
+        return "Weboldal"
+    }
+    return "";
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle("Referenciák")

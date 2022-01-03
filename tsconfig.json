@@ -13,6 +13,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "emitDecoratorMetadata": true, 
     "importHelpers": true,
     "noImplicitAny": false,
     "target": "es2020",

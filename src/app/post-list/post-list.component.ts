@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ContentfulService } from "../contentful.service";
 import { Entry } from "contentful";
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faLaptop, faServer } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {
   trigger,
@@ -15,6 +15,7 @@ import {
   keyframes,
   stagger
 } from '@angular/animations';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-post-list',
@@ -54,6 +55,8 @@ export class PostListComponent implements OnInit {
   currentPage = 0;
   pagesNum:number[] = [];
   postCount = 0;
+
+  techIcons = [faAngular, faServer, faLaptop]
 
   posts: Entry<any>[] = [];
   loaded: boolean = false;

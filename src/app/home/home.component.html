@@ -1,83 +1,104 @@
 <div class="container">
-    <div class="row">
-        <div class="col-5 order-first order-md-last d-flex align-items-center justify-content-end">
-            <img class="profile-pic" src="/assets/images/hahn.jpg" width="250" height="250" />
+    <section>
+        <div class="row">
+            <div class="col-5 order-first order-md-last d-flex align-items-center justify-content-end">
+                <img class="profile-pic" src="/assets/images/hahn.jpg" width="250" height="250" />
+            </div>
+            <div style="display: block" class="col-7 @fade">
+                <h1>Helló, <span class="highlight">Hahn Róbert</span> vagyok!</h1>
+                <p>Ezen a honlapon különféle információkat találhatsz meg rólam.<br />Külfönéle informatikai megoldásokkal foglalkozom, de leginkább a webes technológiákba vetettem bele magam, mint:</p>
+                <ul class="tags">
+                    <li>Webfejlesztés</li>
+                    <li>Full-stack development</li>
+                    <li>JavaScript keretrendszerek</li>
+                    <li>CI/CD</li>
+                    <li>.NET</li>
+                    <li>Webdesign</li>
+                    <li>és még sok más...</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-7 ">
-            <h1>Helló, <span class="highlight">Hahn Róbert</span> vagyok!</h1>
-            <p>Ezen a honlapon különféle információkat találhatsz meg rólam.<br />Külfönéle informatikai megoldásokkal foglalkozom, de leginkább a webes technológiákba vetettem bele magam, mint:</p>
-            <ul class="tags">
-                <li>Webfejlesztés</li>
-                <li>Full-stack development</li>
-                <li>JavaScript keretrendszerek</li>
-                <li>CI/CD</li>
-                <li>.NET</li>
-                <li>Webdesign</li>
-                <li>és még sok más...</li>
-            </ul>
+    </section>
+    <section id="tech-section">
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    Webfejlesztés
+                </h2>
+                <p>Webes alkalmazások fejlesztése során különféle technológiákkal dolgoztam már, repertoáromat igyekszem folyamatosan naprakészen tartani.</p>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <h2>
-                Bemutatkozás
-            </h2>
-            <p>A számítógépek világa már kiskoromban megfogott, azóta pedig mind az iskolarendszerben, mind autodidakta módon próbálom ismereteimet bővíteni és naprakészen tartani.</p>
-            <p>Úgy gondolom aki az informatikával szeretne foglalkozni, nem skatuályzhatja be magát, mivel ez egy nagyon szerteágazó és izgalmas iparág, ahol nap mint nap hihetetlen újítások látnak napvilágot.</p>
+        <div class="row techs" [@postAnimation]=3 *ngIf="ok">
+            <div class="col-lg-4 col-md-12" *ngFor="let tech of techs">
+                <fa-icon [icon]="tech.icon"></fa-icon>
+                <h3>{{ tech.title }}</h3>
+                <p>{{ tech.description }}</p>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            Egyik első munkám a középiskolai tanulmányokra tehető vissza, amikor elindítottuk a sulirádiót, online zenekérési felülettel. A honlap megjelenése és működése sokak érdeklődését felkeltette, így felkérést kaptam a gimnázium honlapjának elkészítésére.
+    </section>
+    <section>
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    Bemutatkozás
+                </h2>
+                <p>A számítógépek világa már kiskoromban megfogott, azóta pedig mind az iskolarendszerben, mind autodidakta módon próbálom ismereteimet bővíteni és naprakészen tartani.</p>
+                <p>Úgy gondolom aki az informatikával szeretne foglalkozni, nem skatuályzhatja be magát, mivel ez egy nagyon szerteágazó és izgalmas iparág, ahol nap mint nap hihetetlen újítások látnak napvilágot.</p>
+            </div>
         </div>
-        <div class="col-12">
-            Az évek alatt több kisebb-nagyobb projektben vettem részt, aktívan részt veszek Nagydorog webes megjelenésének továbbfejlesztésében.
+        <div class="row">
+            <div class="col-12">
+                Egyik első munkám a középiskolai tanulmányokra tehető vissza, amikor elindítottuk a sulirádiót, online zenekérési felülettel. A honlap megjelenése és működése sokak érdeklődését felkeltette, így felkérést kaptam a gimnázium honlapjának elkészítésére.
+            </div>
+            <div class="col-12">
+                Az évek alatt több kisebb-nagyobb projektben vettem részt, aktívan részt veszek Nagydorog webes megjelenésének továbbfejlesztésében.
+            </div>
         </div>
-    </div>
-    <div class="row mt-4 mb-4 gx-5 websites-list">
-        <div class="col-4 ">
-            <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
-                <div class="website-card d-flex p-3 align-items-center">
-                    <div class="icon m-3">
-                        <fa-icon [icon]="iconFaLink"></fa-icon>
+        <div class="row mt-4 mb-4 gx-5 websites-list">
+            <div class="col-4 ">
+                <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
+                    <div class="website-card d-flex p-3 align-items-center">
+                        <div class="icon m-3">
+                            <fa-icon [icon]="iconFaLink"></fa-icon>
+                        </div>
+                        <div class="details m-3">
+                            <h3>EDEN 30 Anniversary</h3>
+                            <p>30 éves évfordulós weboldal</p>
+                        </div>
                     </div>
-                    <div class="details m-3">
-                        <h3>EDEN 30 Anniversary</h3>
-                        <p>30 éves évfordulós weboldal</p>
+                </a>
+            </div>
+            <div class="col-4 ">
+                <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
+                    <div class="website-card d-flex p-3 align-items-center">
+                        <div class="icon m-3">
+                            <fa-icon [icon]="iconFaLink"></fa-icon>
+                        </div>
+                        <div class="details m-3">
+                            <h3>Nagydorog.hu</h3>
+                            <p>Nagydorog Nagyközség weboldala</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.eden-online.org/2021_madrid/conference-programme/" target="_blank" rel="noopener noreferrer">
+                    <div class="website-card d-flex p-3 align-items-center">
+                        <div class="icon m-3">
+                            <fa-icon [icon]="iconFaLink"></fa-icon>
+                        </div>
+                        <div class="details m-3">
+                            <h3>EDEN Conference Area</h3>
+                            <p>Online konferencia felület</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="col-4 ">
-            <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
-                <div class="website-card d-flex p-3 align-items-center">
-                    <div class="icon m-3">
-                        <fa-icon [icon]="iconFaLink"></fa-icon>
-                    </div>
-                    <div class="details m-3">
-                        <h3>Nagydorog.hu</h3>
-                        <p>Nagydorog Nagyközség weboldala</p>
-                    </div>
-                </div>
-            </a>
+        <div class="row">
+            <div class="col-12">
+                Komplett alkalmazások önálló kivitelezését végeztem például a NagydorogTv képújságának elkészítésében, vagy a European Distance and E-Learning Network online konferencia felületének elkészítésekor.
+            </div>
         </div>
-        <div class="col-4">
-            <a href="https://www.eden-online.org/2021_madrid/conference-programme/" target="_blank" rel="noopener noreferrer">
-                <div class="website-card d-flex p-3 align-items-center">
-                    <div class="icon m-3">
-                        <fa-icon [icon]="iconFaLink"></fa-icon>
-                    </div>
-                    <div class="details m-3">
-                        <h3>EDEN Conference Area</h3>
-                        <p>Online konferencia felület</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            Komplett alkalmazások önálló kivitelezését végeztem például a NagydorogTv képújságának elkészítésében, vagy a European Distance and E-Learning Network online konferencia felületének elkészítésekor.
-        </div>
-    </div>
+    </section>
 </div>  

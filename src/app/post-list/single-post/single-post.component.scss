@@ -134,3 +134,13 @@ div.post {
   }
 
 }
+@media screen and (max-width: 1100px) {
+  .post-inner {
+    flex-direction: column !important;
+    .featured-image, .post-details {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+}

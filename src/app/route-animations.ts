@@ -10,7 +10,7 @@ export const blurer = trigger('routeAnimations', [
                 opacity: 0,
                 filter: "blur(20px)"
             })
-        ]),
+        ], {optional: true}),
         query(':enter', [
             animate('200ms ease',
                 style({
@@ -18,7 +18,7 @@ export const blurer = trigger('routeAnimations', [
                     filter: "blur(0px)"
                 })
             )
-        ]),
+        ], {optional: true}),
         query(':leave', [
           animate('200ms ease',
               style({
@@ -26,6 +26,6 @@ export const blurer = trigger('routeAnimations', [
                   filter: "blur(20px)"
               })
           )
-      ])
+      ], {optional: true})
     ])
 ])

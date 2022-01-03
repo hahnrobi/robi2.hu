@@ -1,12 +1,22 @@
 <h1>Referenciák</h1>
+<p>Az alábbi oldalon néhány kiemelt és nyilvánosan is megjeleníthető referenciát szeretnék bemutatni néhány munkámról.</p>
 <div class="portfolio-main">
         <div class="portfolio-item" *ngFor="let item of this.getPortfolioItems(); let i = index">
             <div class="portfolio-inner">
                 <a *ngIf="item.url && item.image" href="{{ item.url }}" target="_blank" rel="noreferrer noopener">
-                    <div *ngIf="item.image" class="portfolio-image" style="background-image: url('{{item.image}}')"></div>
+                    <img *ngIf="item.image" class="portfolio-image" src="{{ item.image }}" loading="lazy" />
                 </a>
-                <div *ngIf="!item.url && item.image" class="portfolio-image" style="background-image: url('{{item.image}}')"></div>
+                <img *ngIf="!item.url && item.image" class="portfolio-image" src="{{ item.image }}" loading="lazy" />
                 <div class="portfolio-content">
+                    <span class="portfolio-category">{{ getCategoryTitle(item.category) }}</span>
+                    <div class="portfolio-techs-list" *ngIf="item.techs">
+                        <ul>
+                            <li *ngFor="let tech of item.techs">
+                                {{ tech }}
+                            </li>
+                        </ul>
+                    </div>
+
                     <a *ngIf="item.url" class="portfolio-item-title" href="{{ item.url }}" target="_blank" rel="noreferrer noopener">
                         {{ item.title }}
                     </a>

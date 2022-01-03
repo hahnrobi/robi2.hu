@@ -1,7 +1,7 @@
 <div class="main-container container-fluid p-5">
   <div class="row">
     <div class="col menu-col order-first order-md-last">
-      <nav>
+      <nav [ngClass]="{'expanded': isExpanded}">
         <div class="container">
             <span class="menu-title">Menü</span>
             <dark-mode-switch class="dark-mode-switch"></dark-mode-switch>
@@ -51,6 +51,10 @@
             </ul>
         </div>
       </nav>
+      <div class="mobile-menu-bar">
+        <button [ngClass]="{'btn-active': isExpanded}" (click)="isExpanded = !isExpanded" aria-label="Menü megjelenítése"><fa-icon [icon]="mobileMenuToggleIcon"></fa-icon></button>
+        <img src="/assets/images/logo-red.png" class="mobile-logo" alt="" aria-label="" />
+      </div>
     </div>
     <div class="col d-flex justify-content-center">
       <div class="container m-0" [@routeAnimations]="prepareRouter(outlet)" style="position: relative">

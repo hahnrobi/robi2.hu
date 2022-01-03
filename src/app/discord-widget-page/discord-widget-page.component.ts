@@ -1,11 +1,33 @@
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {
+  trigger,
+  transition,
+  style,
+  query,
+  group,
+  animateChild,
+  animate,
+  keyframes,
+  stagger
+} from '@angular/animations';
 
 @Component({
   selector: 'app-discord-widget-page',
   templateUrl: './discord-widget-page.component.html',
-  styleUrls: ['./discord-widget-page.component.scss']
+  styleUrls: ['./discord-widget-page.component.scss'],
+  animations: [
+    trigger('fade', [      
+      transition('void => *', [
+        style({opacity: 0}),
+        animate(4000, style({opacity: 1}))
+      ]),
+      transition('* => void', [
+        animate(4000, style({opacity: 0}))
+      ])
+    ])]
+  
 })
 export class DiscordWidgetPageComponent implements OnInit {
 

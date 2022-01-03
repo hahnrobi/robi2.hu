@@ -1,7 +1,8 @@
+import { NavigationStart, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faAddressCard, faCode, faComments, faLink, faPlus, faToolbox } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faBars, faCode, faComments, faLink, faPlus, faToolbox } from '@fortawesome/free-solid-svg-icons';
 import { blurer} from './route-animations';
 
 @Component({
@@ -13,8 +14,13 @@ import { blurer} from './route-animations';
 })
 export class AppComponent {
   title = 'robi2';
-  isCollapsed = false;
+  isExpanded = false;
+
+  constructor(private router:Router) {
+    router.events.subscribe(val => {if(val instanceof NavigationStart) this.isExpanded = false});
+  }
   
+  mobileMenuToggleIcon = faBars;
   menuIcons = [faAddressCard, faComments, faLink, faDiscord, faCode, faPlus, faToolbox];
   footerIcons = [faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub];
 

@@ -9,7 +9,7 @@ export class PortfolioService {
   private portfolio:PortfolioItem[] = [
     {
       category: "website",
-      title: "LadyPhoto",
+      title: "LadyPhoto fotós oldal/galéria",
       techs: ["Angular", "Angular Material"],
     },
     {
@@ -42,7 +42,7 @@ export class PortfolioService {
     },
     {
       category: "graphics",
-      title: "DUE cipősdoboz akció",
+      title: "Dunaújvárosi Egyetem cipősdoboz akció",
       image: "/assets/images/portfolio/ciposdoboz.jpg",
     },
     {
@@ -66,8 +66,9 @@ export class PortfolioService {
       url: "https://www.youtube.com/watch?v=COD2QP1k4T4" 
     },
     {
-      title: "Cserép Egér",
+      title: "Cserép Egér arculattervezés",
       category: "graphics",
+      url: "https://facebook.com/cserepeger",
       image: "/assets/images/portfolio/cserepeger.jpg"
     },
     {
@@ -81,8 +82,13 @@ export class PortfolioService {
       category: "graphics",
     },
     {
+      title: "Adventi Licit",
+      category: "website",
+    },
+    {
       title: "NagydorogTv képújság",
       category: "website",
+      image: "/assets/images/portfolio/kepujsag.jpg"
     },
     {
       title: "DsD táncegyesület gálavideók",

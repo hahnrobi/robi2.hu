@@ -2,7 +2,14 @@
     <section>
         <div class="row">
             <div class="col-5 order-first order-md-last d-flex align-items-center justify-content-end">
-                <img class="profile-pic" src="/assets/images/hahn.jpg" width="250" height="250" />
+                <svg width="0" height="0">
+                    <defs>
+                      <clipPath id="myCurve" clipPathUnits="objectBoundingBox">
+                        <path d="M0.8119735682819383,0.0087384c-0.15997356828193832,-0.022868571428571426,-0.3831982378854626,0.09148,-0.3831982378854626,0.09148c-0.1971806167400881,0.08862285714285714,-0.4330528634361233,0.28244571428571424,-0.42412334801762114,0.4631142857142857c0,0.16009142857142855,0.22680616740088105,0.32390285714285716,0.42412334801762114,0.3830742857142857c0.13951541850220264,0.04183428571428571,0.528295154185022,0.17152571428571428,0.558057268722467,-0.16866857142857142c0.004753303964757709,-0.05431428571428572,0.005982378854625551,-0.11814857142857142,0.014881057268722468,-0.24299428571428572c0.014881057268722468,-0.2086857142857143,-0.029762114537444935,-0.503137142857143,-0.18974008810572687,-0.5260057142857143z" stroke="black"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                <img style="clip-path: url(#myCurve);" class="profile-pic" src="/assets/images/hahn.jpg" width="250" height="250" />
             </div>
             <div style="display: block" class="col-7 @fade">
                 <h1>Helló, <span class="highlight">Hahn Róbert</span> vagyok!</h1>
@@ -55,12 +62,9 @@
             </div>
         </div>
         <div class="row mt-4 mb-4 gx-5 websites-list">
-            <div class="col-4 ">
+            <div class="col-lg-4 col-md-12 mb-3">
                 <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
-                        <div class="icon m-3">
-                            <fa-icon [icon]="iconFaLink"></fa-icon>
-                        </div>
                         <div class="details m-3">
                             <h3>EDEN 30 Anniversary</h3>
                             <p>30 éves évfordulós weboldal</p>
@@ -68,12 +72,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-4 ">
+            <div class="col-lg-4 col-md-12 mb-3">
                 <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
-                        <div class="icon m-3">
-                            <fa-icon [icon]="iconFaLink"></fa-icon>
-                        </div>
                         <div class="details m-3">
                             <h3>Nagydorog.hu</h3>
                             <p>Nagydorog Nagyközség weboldala</p>
@@ -81,12 +82,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-12 mb-3">
                 <a href="https://www.eden-online.org/2021_madrid/conference-programme/" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
-                        <div class="icon m-3">
-                            <fa-icon [icon]="iconFaLink"></fa-icon>
-                        </div>
                         <div class="details m-3">
                             <h3>EDEN Conference Area</h3>
                             <p>Online konferencia felület</p>

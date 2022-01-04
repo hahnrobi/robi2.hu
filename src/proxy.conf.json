@@ -1,7 +1,8 @@
 {
     "/hasznos-files": {
-        "target": "//robi2.hu/hasznos-files/index.php",
+        "target": "http://robi2.hu/hasznos-files/index.php",
         "secure": true,
-        "logLevel": "debug"
+        "logLevel": "debug",
+        "changeOrigin": true
     }
 }

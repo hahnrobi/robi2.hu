@@ -4,6 +4,7 @@ import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget
 import { HasznosPageComponent } from './hasznos-page/hasznos-page.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { OtherComponent } from './other/other.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostSingleComponent } from './post-single/post-single.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { "path": "portfolio", component: PortfolioComponent, data: {animation: "portfolio"}}, 
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: "discord"}},
   { "path": "hasznos", component: HasznosPageComponent, data: {animation: "hasznos"}},
+  { "path": "other", component: OtherComponent, data: {animation: "other"}},
   { "path": "posts", component: PostListComponent, data: {animation: "posts"}},
   { "path": "post/:id", component: PostSingleComponent, data: {animation: "post/:id"}},
   { "path": ":id", component: PostSingleComponent},

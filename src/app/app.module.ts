@@ -23,6 +23,7 @@ import { HasznosFileListItemComponent } from './hasznos-page/hasznos-file-list/h
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { OtherComponent } from './other/other.component';
 
 
 
@@ -43,6 +44,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HomeComponent,
     NotFoundComponent,
     PortfolioComponent,
+    OtherComponent,
   ],
   imports: [
     BrowserModule,

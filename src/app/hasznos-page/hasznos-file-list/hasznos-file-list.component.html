@@ -1,7 +1,10 @@
 <p style="text-align: center" *ngIf="password.length > 0"><b>Fájlok listázása ezzel a kulccsal:</b> {{ this.password }}</p>
 <div *ngIf="filesLoaded" [@itemsAnimation]> 
 	<p>{{ files.fileCount }} darab fájl (összesen {{ files.totalFileSize }}).</p>
-<div *ngFor="let file of files.files">
-	<file-list-item [file]="file" [password]="password"></file-list-item>
+	<div *ngFor="let file of files.files">
+		<file-list-item [file]="file" [password]="password"></file-list-item>
+	</div>
 </div>
+<div *ngIf="!filesLoaded"> 
+	<app-loader-animation></app-loader-animation>
 </div>

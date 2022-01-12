@@ -2,7 +2,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faAddressCard, faBars, faCode, faComments, faLink, faPlus, faToolbox } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faBars, faCode, faComments, faHeartbeat, faLink, faPlus, faToolbox } from '@fortawesome/free-solid-svg-icons';
 import { blurer} from './route-animations';
 
 @Component({
@@ -19,9 +19,11 @@ export class AppComponent {
   constructor(private router:Router) {
     router.events.subscribe(val => {if(val instanceof NavigationStart) this.isExpanded = false});
   }
-  
+  onRouterActivate(event) {
+    window.scrollTo(0,0);
+  }
   mobileMenuToggleIcon = faBars;
-  menuIcons = [faAddressCard, faComments, faLink, faDiscord, faCode, faPlus, faToolbox];
+  menuIcons = [faAddressCard, faComments, faLink, faDiscord, faCode, faPlus, faToolbox, faHeartbeat];
   footerIcons = [faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub];
 
   prepareRouter(outlet: RouterOutlet) {

@@ -19,7 +19,7 @@
                 </a>
               </li>
               <li class="nav-item p-1">
-                <a class="nav-link p-3" href="https://iva.hu">
+                <a class="nav-link p-3" href="https://iva.hu" rel="noopener" target="_blank">
                   <fa-icon [icon]="menuIcons[2]"></fa-icon>
                   IVA Media
                 </a>
@@ -48,6 +48,12 @@
                   Hasznos
                 </a>
               </li>
+              <li class="nav-item p-1">
+                <a class="nav-link p-3" routerLink="/status" routerLinkActive="current">
+                  <fa-icon [icon]="menuIcons[7]"></fa-icon>
+                  Állapot
+                </a>
+              </li>
             </ul>
         </div>
       </nav>
@@ -58,7 +64,7 @@
     </div>
     <div class="col d-flex justify-content-center">
       <div class="container m-0" [@routeAnimations]="prepareRouter(outlet)" style="position: relative">
-        <router-outlet #outlet="outlet"></router-outlet>
+        <router-outlet #outlet="outlet" (activate)="onRouterActivate($event)"></router-outlet>
       </div>
     </div>
   </div>

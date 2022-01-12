@@ -1,3 +1,4 @@
+import { StatusComponent } from './status/status.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { "path": "404", component: NotFoundComponent},
   { "path": "about", component: HomeComponent, data: {animation: "about"}}, 
   { "path": "portfolio", component: PortfolioComponent, data: {animation: "portfolio"}}, 
+  { "path": "status", component: StatusComponent, data: {animation: "status"}},
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: "discord"}},
   { "path": "hasznos", component: HasznosPageComponent, data: {animation: "hasznos"}},
   { "path": "other", component: OtherComponent, data: {animation: "other"}},

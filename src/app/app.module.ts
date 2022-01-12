@@ -24,6 +24,8 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { OtherComponent } from './other/other.component';
+import { StatusComponent } from './status/status.component';
+import { AppearDirective } from './appear.directive';
 
 
 
@@ -45,6 +47,8 @@ import { OtherComponent } from './other/other.component';
     NotFoundComponent,
     PortfolioComponent,
     OtherComponent,
+    StatusComponent,
+    AppearDirective,
   ],
   imports: [
     BrowserModule,

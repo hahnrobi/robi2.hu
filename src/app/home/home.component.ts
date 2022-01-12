@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faDiscord, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faLaptop, faLink, faServer } from '@fortawesome/free-solid-svg-icons';
 import {
   trigger,
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     {
       icon: faAngular,
       title: "Front-end",
-      description: "Angular és Next.js JavaScript könyvtárak használata CSS, SCSS és HTML mellett."
+      description: "Angular, Next.js és React JavaScript könyvtárak használata CSS, SCSS és HTML mellett."
     },
     {
       icon: faServer,
@@ -65,6 +65,23 @@ export class HomeComponent implements OnInit {
       icon: faLaptop,
       title: "UI/UX",
       description: "Felhasználói felületek felépítése, ergonómiai és kompatibilitási szempontok figyelembevételével."
+    }
+  ]
+
+  contact = [
+    {
+      "icon": faDiscord,
+      "name": "ROBITWO#6334",
+    },
+    {
+      "icon": faFacebook,
+      "name": "hahnrobi",
+      "link": "https://www.facebook.com/hahnrobi"
+    },
+    {
+      "icon": faInstagram,
+      "name": "hahnrobi",
+      "link": "https://www.instagram.com/hahnrobi/"
     }
   ]
 

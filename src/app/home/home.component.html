@@ -32,7 +32,6 @@
                 <h2>
                     Webfejlesztés
                 </h2>
-                <p>Webes alkalmazások fejlesztése során különféle technológiákkal dolgoztam már, repertoáromat igyekszem folyamatosan naprakészen tartani.</p>
             </div>
         </div>
         <div class="row techs" [@postAnimation]=3 *ngIf="ok">
@@ -50,19 +49,19 @@
                     Bemutatkozás
                 </h2>
                 <p>A számítógépek világa már kiskoromban megfogott, azóta pedig mind az iskolarendszerben, mind autodidakta módon próbálom ismereteimet bővíteni és naprakészen tartani.</p>
-                <p>Úgy gondolom aki az informatikával szeretne foglalkozni, nem skatuályzhatja be magát, mivel ez egy nagyon szerteágazó és izgalmas iparág, ahol nap mint nap hihetetlen újítások látnak napvilágot.</p>
+                <p>Úgy gondolom aki az informatikával szeretne foglalkozni, nem skatuályzhatja be magát. Ez egy nagyon szerteágazó és izgalmas iparág, ahol nap mint nap hihetetlen újítások látnak napvilágot.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                Egyik első munkám a középiskolai tanulmányokra tehető vissza, amikor elindítottuk a sulirádiót, online zenekérési felülettel. A honlap megjelenése és működése sokak érdeklődését felkeltette, így felkérést kaptam a gimnázium honlapjának elkészítésére.
+                Egyik első munkám a középiskolában történt, amikor elindítottuk a sulirádiót, online zenekérési felülettel. A honlap megjelenése és működése sokak érdeklődését felkeltette, így felkérést kaptam a gimnázium honlapjának elkészítésére.
             </div>
             <div class="col-12">
                 Az évek alatt több kisebb-nagyobb projektben vettem részt, aktívan részt veszek Nagydorog webes megjelenésének továbbfejlesztésében.
             </div>
         </div>
         <div class="row mt-4 mb-4 gx-5 websites-list">
-            <div class="col-lg-4 col-md-12 mb-3">
+            <div class="col-lg-6 col-md-12 mb-3">
                 <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
                         <div class="details m-3">
@@ -72,8 +71,8 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-md-12 mb-3">
-                <a href="//30.eden-online.org" target="_blank" rel="noopener noreferrer">
+            <div class="col-lg-6 col-md-12 mb-3">
+                <a href="http://nagydorog.hu" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
                         <div class="details m-3">
                             <h3>Nagydorog.hu</h3>
@@ -82,7 +81,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-4 col-md-12 mb-3">
+            <div class="col-lg-6 col-md-12 mb-3">
                 <a href="https://www.eden-online.org/2021_madrid/conference-programme/" target="_blank" rel="noopener noreferrer">
                     <div class="website-card d-flex p-3 align-items-center">
                         <div class="details m-3">
@@ -92,10 +91,54 @@
                     </div>
                 </a>
             </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <a href="http://hok.uniduna.hu/" target="_blank" rel="noopener noreferrer">
+                    <div class="website-card d-flex p-3 align-items-center">
+                        <div class="details m-3">
+                            <h3>DUE EHÖK</h3>
+                            <p>DUE Hallgatói Önkormányzat weboldala</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-12 col-md-12 mb-3 d-flex align-items-center justify-content-center">
+                <a class="button portfolio-btn" routerLink='/portfolio'>További referenciák...</a>
+            </div>
         </div>
         <div class="row">
             <div class="col-12">
-                Komplett alkalmazások önálló kivitelezését végeztem például a NagydorogTv képújságának elkészítésében, vagy a European Distance and E-Learning Network online konferencia felületének elkészítésekor.
+                A weboldalon elsősorban a nyilvánosan elérhető webes projektek találhatóak meg.
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row">
+            <div class="col-12" style="margin-bottom: 2rem">
+                <h2>Kapcsolat</h2>
+                <p>Amennyiben kapcsolatba szeretnél velem lépni, azt a következő elérhetőségek egyikén megteheted: </p>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-md-4 col-sm-12 contact-icons">
+                <ul>
+                    <li *ngFor="let item of this.contact">
+                        <div *ngIf="item.link; then contactItemHasLink else contactItemNoLink"></div>
+
+                        <ng-template #contactItemHasLink>
+                            <a href="{{item.link}}" target="_blank" rel="noopener noreferrer">
+                                <fa-icon class="icon" [icon]="item.icon"></fa-icon> {{ item.name }}
+                            </a>
+                        </ng-template>
+
+                        <ng-template #contactItemNoLink>
+                            <fa-icon class="icon" [icon]="item.icon"></fa-icon> {{ item.name }}
+                        </ng-template>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 col-sm-12 text-center">
+                <p>Az elektronikus üzenetváltás legcsodálatosabb formája az e-mail. Egy lényegretörő tárgy és egy jól formázott HTML aláírás többet mond minden Messenger emojinál. 💩</p>
+                <a class="mail" href="mailto:robihahn98@gmail.com" target="_blank">robihahn98@gmail.com</a>
             </div>
         </div>
     </section>

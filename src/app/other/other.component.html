@@ -1,1 +1,17 @@
-<p>other works!</p>
+<h1>Egyéb anyagok</h1>
+<p>Az alábbi oldalon néhány olyan hasznosnak vélhető tartalmat gyűjtöttem össze, amelyek nem kerültek máshol linkelésre.</p>
+<div class="list" [@itemAnimation]="this.otherItems.length" *ngIf="itemsCanShow">
+	<div class="item" *ngFor="let item of this.otherItems">
+		<div class="title">
+			{{ item.title }}
+		</div>
+		<div class="desc">
+			{{ item.description }}
+		</div>
+		<div class="link">
+			<a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="button">
+				Megnyitás
+			</a>
+		</div>
+	</div>
+</div>

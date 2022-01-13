@@ -44,9 +44,15 @@ ul.tags {
         text-transform: none;
     }
 }
+section.intro {
+    margin-top: 5rem;
+}
 @media screen and (max-width: 900px) {
     .website-card {
         flex-direction: column;
+    }
+    section.intro {
+        margin-top: 0rem;
     }
 }
 .websites-list {
@@ -74,11 +80,11 @@ ul.tags {
     }
 }
 section#tech-section {
-    min-height: 360px;
+    min-height: 310px;
 }
 @media screen and (max-width: 900px) {
     section#tech-section {
-        min-height: 620px !important;
+        min-height: 550px !important;
     }
 }
 .techs {

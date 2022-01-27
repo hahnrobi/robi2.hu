@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'app-uptime',
   templateUrl: './uptime.component.html',
   styleUrls: ['./uptime.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UptimeComponent implements OnInit {
 

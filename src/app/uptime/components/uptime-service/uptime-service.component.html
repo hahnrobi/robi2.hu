@@ -1,0 +1,10 @@
+<div class="statusbar" [ngClass]="{'online': site.status === 'Online', 'offline': site.status === 'Offline'}">
+</div>
+<div class="info">
+	<div class="name">{{ site.name }}</div>
+	<div class="last-checked"><fa-icon [icon]=lastCheckIcon></fa-icon>{{ (site.lastCheck * 1000) | date:'yyyy.MM.dd HH:mm:ss' }}</div>
+	<div class="stats">
+		<div class="stats-item">{{ site.uptimeTotal | number: '1.2-2'}}%<span class="stats-item-label">Uptime</span></div>
+		<div class="stats-item">{{ site.uptimeToday | number: '1.2-2'}}%<span class="stats-item-label">Mai nap</span></div>
+	</div>
+</div>

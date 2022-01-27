@@ -1,6 +1,6 @@
-export class Service {
+export class UptimeSite {
 	name: string
-	lastCheck: string
+	lastCheck: number
 	uptimeTotal: string
 	uptimeToday: string
 	category: string

@@ -1,0 +1,12 @@
+:host {
+	display: block;
+}
+.sites-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	app-uptime-service {
+		width: calc(100% / 3 - 20px);
+		margin: 10px;
+	}
+}

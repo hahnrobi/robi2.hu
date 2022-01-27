@@ -1,0 +1,4 @@
+<h2>{{ this.group.title }}</h2>
+<div class="sites-container">
+<app-uptime-service *ngFor="let site of this.group.sites" [site]="site"></app-uptime-service>
+</div>

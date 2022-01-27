@@ -55,10 +55,11 @@ downloadFile(uri:string,): void {
 
           // IE doesn't allow using a blob object directly as link href
           // instead it is necessary to use msSaveOrOpenBlob
-          if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-              window.navigator.msSaveOrOpenBlob(newBlob);
-              return;
-          }
+          // Obsolote, irrevelant since Angular doesnt support IE
+          //if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+              //window.navigator.msSaveOrOpenBlob(newBlob);
+              //return;
+          //}
 
           // For other browsers: 
           // Create a link pointing to the ObjectURL containing the blob.

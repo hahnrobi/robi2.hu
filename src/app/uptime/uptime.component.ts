@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { UptimeService } from './uptime.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-uptime',
   templateUrl: './uptime.component.html',
-  styleUrls: ['./uptime.component.scss']
+  styleUrls: ['./uptime.component.scss'],
 })
 export class UptimeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private uptimeService:UptimeService) { }
 
   ngOnInit(): void {
   }
+
+  uptimes$ = this.uptimeService.getUptime();
 
 }

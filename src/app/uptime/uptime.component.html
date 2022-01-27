@@ -1,1 +1,15 @@
-<p>uptime works!</p>
+
+<div *ngIf="this.uptimes$ | async as uptimes; else loading" class="groups-container">
+	<div *ngFor="let group of uptimes" class="group">
+		{{ group.title }}
+		<div class="services-container">
+		<div *ngFor="let service of group.sites" class="service">
+			{{ service.name }}
+		</div>
+		</div>
+	</div>
+
+</div>
+<ng-template #loading>
+	Loading
+</ng-template>

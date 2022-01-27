@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
+import { UptimeGroup } from './model/group';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,9 @@ import { environment } from './../../environments/environment';
 export class UptimeService {
 
   constructor(private http:HttpClient) {
-
-    this.getUptime();
   }
+
   getUptime() {
-    let uptime = this.http.get(environment.uptimes.apiUrl);
-    uptime.subscribe(obj => {
-      console.log(obj)
-    });
-    
+    return this.http.get<UptimeGroup[]>(environment.uptimes.apiUrl);
   }
 }

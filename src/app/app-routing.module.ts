@@ -1,3 +1,4 @@
+import { UptimeModule } from './uptime/uptime.module';
 import { StatusComponent } from './status/status.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -22,7 +23,7 @@ const routes: Routes = [
   { "path": "other", component: OtherComponent, data: {animation: "other"}},
   {
     path: 'uptime',
-    loadChildren: './uptime/uptime.module#UptimeModule'
+    loadChildren: () => import('./uptime/uptime.module').then(m => m.UptimeModule)
   },
   { "path": "posts", component: PostListComponent, data: {animation: "posts"}},
   { "path": "post/:id", component: PostSingleComponent, data: {animation: "post/:id"}},

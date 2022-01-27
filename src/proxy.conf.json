@@ -4,5 +4,10 @@
         "secure": true,
         "logLevel": "debug",
         "changeOrigin": true
+    },
+    "//robi2.hu/hetrix.php": {
+        "target": "//robi2.hu/hetrix.php",
+        "logLevel": "debug",
+        "changeOrigin": true
     }
 }

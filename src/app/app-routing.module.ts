@@ -20,6 +20,10 @@ const routes: Routes = [
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: "discord"}},
   { "path": "hasznos", component: HasznosPageComponent, data: {animation: "hasznos"}},
   { "path": "other", component: OtherComponent, data: {animation: "other"}},
+  {
+    path: 'uptime',
+    loadChildren: './uptime/uptime.module#UptimeModule'
+  },
   { "path": "posts", component: PostListComponent, data: {animation: "posts"}},
   { "path": "post/:id", component: PostSingleComponent, data: {animation: "post/:id"}},
   { "path": ":id", component: PostSingleComponent},

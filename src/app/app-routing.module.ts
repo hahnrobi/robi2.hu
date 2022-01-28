@@ -1,3 +1,4 @@
+import { UptimeModule } from './uptime/uptime.module';
 import { StatusComponent } from './status/status.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,10 +17,15 @@ const routes: Routes = [
   { "path": "404", component: NotFoundComponent},
   { "path": "about", component: HomeComponent, data: {animation: "about"}}, 
   { "path": "portfolio", component: PortfolioComponent, data: {animation: "portfolio"}}, 
-  { "path": "status", component: StatusComponent, data: {animation: "status"}},
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: "discord"}},
   { "path": "hasznos", component: HasznosPageComponent, data: {animation: "hasznos"}},
   { "path": "other", component: OtherComponent, data: {animation: "other"}},
+  { "path": "status", redirectTo: "uptime"},
+  {
+    path: 'uptime',
+    loadChildren: () => import('./uptime/uptime.module').then(m => m.UptimeModule),
+    data: {animation: "uptime"}
+  },
   { "path": "posts", component: PostListComponent, data: {animation: "posts"}},
   { "path": "post/:id", component: PostSingleComponent, data: {animation: "post/:id"}},
   { "path": ":id", component: PostSingleComponent},

@@ -1,0 +1,14 @@
+.services-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.service {
+		width: calc(100% / 3);
+		background: var(--bg);
+		border-radius: 5px;
+		box-shadow: 0px 1px 10px rgba(0,0,0,.2);
+	}
+}
+h1 {
+	font-weight: 600;
+}

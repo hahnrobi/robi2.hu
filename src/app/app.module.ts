@@ -1,3 +1,4 @@
+import { LoaderAnimationModule } from './loader-animation/loader-animation.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,6 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostSingleComponent } from './post-single/post-single.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LoaderAnimationComponent } from './loader-animation/loader-animation.component';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
 import { SinglePostComponent } from './post-list/single-post/single-post.component';
@@ -35,7 +35,6 @@ import { AppearDirective } from './appear.directive';
     PostListComponent,
     PostSingleComponent,
     MdToHtmlPipe,
-    LoaderAnimationComponent,
     DiscordWidgetPageComponent,
     DarkModeSwitchComponent,
     SinglePostComponent,
@@ -56,7 +55,7 @@ import { AppearDirective } from './appear.directive';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    LoaderAnimationModule,
     FontAwesomeModule
   ],
   providers: [ContentfulService],

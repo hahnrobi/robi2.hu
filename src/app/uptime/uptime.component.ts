@@ -1,3 +1,4 @@
+import { UptimeGroup } from './model/group';
 import { UptimeService } from './uptime.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
@@ -12,6 +13,7 @@ export class UptimeComponent implements OnInit {
   constructor(private uptimeService:UptimeService) { }
 
   ngOnInit(): void {
+    this.uptimeService.updateUptimeData();
   }
 
   uptimes$ = this.uptimeService.getUptime();

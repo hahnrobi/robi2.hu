@@ -26,6 +26,9 @@
 		&.offline {
 			background: var(--red);
 		}
+		&.lag {
+			background: #ffd403 !important;
+		}
 	}
 	.info {
 		width: 100%;

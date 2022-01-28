@@ -1,4 +1,4 @@
 <h2>{{ this.group.title }}</h2>
-<div class="sites-container">
+<div class="sites-container" [@postAnimation]="this.group.sites.length" *ngIf="this.group">
 <app-uptime-service *ngFor="let site of this.group.sites" [site]="site"></app-uptime-service>
 </div>

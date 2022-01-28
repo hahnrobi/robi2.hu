@@ -1,3 +1,4 @@
+import { LoaderAnimationModule } from './../loader-animation/loader-animation.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoaderAnimationComponent } from './../loader-animation/loader-animation.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +17,7 @@ import { UptimeServiceComponent } from './components/uptime-service/uptime-servi
     CommonModule,
     FontAwesomeModule,
     UptimeRoutingModule,
+    LoaderAnimationModule,
     HttpClientModule
   ],
   exports: [UptimeComponent]

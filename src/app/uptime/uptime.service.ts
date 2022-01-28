@@ -12,34 +12,37 @@ export class UptimeService {
 
   private uptime$: ReplaySubject<UptimeGroup[]>;
   private timerStarted = false;
+  private lastUpdate;
 
   constructor(private http:HttpClient) {
     this.uptime$ = new ReplaySubject<UptimeGroup[]>();
-    
   }
   private timerLogic(): ReplaySubject<UptimeGroup[]> {
     this.timerStarted = true;
-    console.log(this.uptime$.observers);
     this.updateUptimeData();
-    let rxInterval = interval(5000);
+    let rxInterval = interval(30000);
     const intervalSub = rxInterval.subscribe(tick => {
-      console.log("tick");
-      console.log(this.uptime$.observers);
-      this.updateUptimeData();
       if(this.uptime$.observers.length === 0) {
         intervalSub.unsubscribe();
         this.timerStarted = false;
+      }else {
+        this.updateUptimeData();
       }
     })
     return this.uptime$;
   }
 
   private makeRequest():Observable<UptimeGroup[]> {
-    return this.http.get<UptimeGroup[]>(environment.uptimes.apiUrl);
+      return this.http.get<UptimeGroup[]>(environment.uptimes.apiUrl + "?" + new Date().getTime());
   }
   
   updateUptimeData() {
-    this.makeRequest().subscribe(d => this.uptime$.next(d));
+    if(!this.lastUpdate || this.lastUpdate + 1000 < new Date().getTime()) {
+      this.lastUpdate = new Date().getTime();
+      this.makeRequest().subscribe(d => this.uptime$.next(d));
+      console.log("Uptimes updated.");
+    }
+    
   }
 
   getUptime(): ReplaySubject<UptimeGroup[]> {

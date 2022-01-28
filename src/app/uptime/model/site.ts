@@ -5,4 +5,6 @@ export class UptimeSite {
 	uptimeToday: string
 	category: string
 	status: string
+	lastResponseTime: number
+	averageResponseTime: number
 }

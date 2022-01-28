@@ -9,7 +9,7 @@ This is my personal website, hosted on [robi2.hu](https://robi2.hu). This was my
 I list some of my previous publicly available projects on this site.
 
 ## Development state
-I only working on this site in free parts of my free time, so obviously it's far from perfect. However I want to optimize and add more features in the future.
+I only working on this site in parts of my free time, so obviously it's far from perfect. However I want to optimize and add more features in the future.
 
 ## Roadmap
 - Test: There's no test specified yet, which is a big mistake.

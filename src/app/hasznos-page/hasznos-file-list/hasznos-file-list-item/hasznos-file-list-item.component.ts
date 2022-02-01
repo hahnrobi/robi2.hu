@@ -28,7 +28,7 @@ export class HasznosFileListItemComponent implements OnInit {
       }),
       responseType: 'blob'
     };
-    return this.http.get("/hasznos-files/getfile.php?file=" + uri, {
+    return this.http.get("/hasznos-api/getfile.php?file=" + uri, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.password),
       observe: 'events',
       reportProgress: true,

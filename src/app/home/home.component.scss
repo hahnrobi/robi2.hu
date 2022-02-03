@@ -28,6 +28,7 @@ ul.tags {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 2rem;
     li {
         background: var(--red);
         padding: 5px 10px;
@@ -139,4 +140,21 @@ section#tech-section {
     color: var(--red);
     font-size: 1.3rem;
     font-weight: 400;
+}
+
+.meta {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 300px;
+    margin-top: .5rem;
+    .meta-title, .meta-content {
+        width: 50%;
+    }
+    .meta-title {
+        opacity: .7;
+    }
+    .meta-content a {
+        color: var(--red);
+    }
 }

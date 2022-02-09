@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { ContentfulService } from "../contentful.service";
-import { Entry } from "contentful";
 import { faCalendarAlt, faLaptop, faServer } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {
@@ -16,6 +14,8 @@ import {
   stagger
 } from '@angular/animations';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import { SinglePost } from '../models/single-post';
+import { PostsService } from '../post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -58,45 +58,42 @@ export class PostListComponent implements OnInit {
 
   techIcons = [faAngular, faServer, faLaptop]
 
-  posts: Entry<any>[] = [];
+  posts: SinglePost[];
   loaded: boolean = false;
   imageLoading: boolean = true;
   faCalendarAlt = faCalendarAlt;
 
-  constructor(private router : Router, private contentfulService : ContentfulService, private titleService:Title) {
+  constructor(private router : Router, private postService: PostsService, private titleService:Title) {
     this.titleService.setTitle("Posztok");
   }
 
   ngOnInit(): void {
-    this.contentfulService.getPostsCount()
-    .then(x => 
+    this.postService.getPosts(0, this.pagination)
+    .subscribe(x => 
       {
-        this.postCount = x;
-        this.pagesNum = Array( Math.ceil( this.postCount/this.pagination ) ).fill( 0 ).map( ( x,i )=>i )
+        console.log(x);
+        this.postCount = x.total;
+        this.pagesNum = Array( Math.ceil( this.postCount/x.limit ) ).fill( 0 ).map( ( x,i )=>i )
+        console.log(this.pagesNum)
       }
     );
 
-    this.loadPosts();
+    this.loadPosts(0, this.pagination);
   }
 
   changePage(page: number) {
     this.currentPage = page;
-    this.loadPosts();
+    this.loadPosts(page * this.pagination, this.pagination);
   }
 
 
-  loadPosts(query? : object | undefined) {
+  loadPosts(page = 0, limit = 10) {
     this.loaded = false;
-    this.contentfulService.getPosts(
-      Object.assign(
-      {
-        limit: this.pagination,
-        skip: this.currentPage*this.pagination
-      }, query))
-      .then(
+    this.postService.getPosts(page, limit)
+      .subscribe(
         response => 
         {
-          this.posts = response; this.loaded = true;
+          this.posts = response.posts; this.loaded = true;
         }
       );
   }

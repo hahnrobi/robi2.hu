@@ -8,6 +8,7 @@ export const environment = {
     space: "ylttp6j3w9z2",
     accessToken: "rKq4WIPbYVtxQH1pCxi-_5WZoqPYyA4sykdKR8TJCbQ"
   },
+  blogApiUrl: "//localhost:3000",
   uptimes: {
     apiUrl: "//robi2.hu/hetrix.php"
   }

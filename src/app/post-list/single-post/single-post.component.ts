@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entry } from 'contentful';
 import { faCalendarAlt, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { SinglePost } from 'src/app/models/single-post';
 

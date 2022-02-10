@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { ContentfulService } from "../contentful.service";
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
-import { Entry } from "contentful";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {

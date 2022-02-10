@@ -22,8 +22,8 @@
       {{ post.publishDate | date:'yyyy.MM.dd.' }}
     </div>
   </div>
-  <div class="post-content" [innerHTML]="(post.content)">
-
+  <div class="post-content" >
+    <wm-markdown (markdown)="post.content"></wm-markdown>
   </div>
 </div>
 </article>

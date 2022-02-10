@@ -22,6 +22,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "defaultConfiguration": "development",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/robi2",
@@ -66,18 +67,27 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "buildOptimizer": false,
+              "serviceWorker": false
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "robi2:build",
+            "browserTarget": "robi2:build:development",
             "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
               "browserTarget": "robi2:build:production"
+            },
+            "development": {
+              "browserTarget": "app:build:development"
             }
           }
         },

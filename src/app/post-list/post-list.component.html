@@ -13,7 +13,7 @@ Az itt megjelenített anyagok szabadon felhasználhatók a <a target="_blank" re
 </div>
 </div>
 <ul class="pagination" *ngIf="this.pagesNum.length > 1">
-  <li *ngFor="let i of this.pagesNum" (click)="changePage(i)" [ngClass]="{'pagination-active' : i==this.currentPage}">
+  <li *ngFor="let i of this.pagesNum" (click)="changePage(i)" [ngClass]="{'pagination-active' : i === this.currentPage}">
     {{i+1}}
   </li>
 </ul>

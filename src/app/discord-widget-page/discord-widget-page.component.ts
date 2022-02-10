@@ -1,5 +1,5 @@
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {
   trigger,
@@ -29,7 +29,7 @@ import {
     ])]
   
 })
-export class DiscordWidgetPageComponent implements OnInit {
+export class DiscordWidgetPageComponent implements OnInit, OnDestroy {
 
   constructor(private serviceTitle:Title) { }
 

@@ -1,6 +1,6 @@
 <a routerLink="/{{post.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
 <div class="post">
-  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap" [ngClass]="{'post-reverse': this.index % 2 == 0}">
+  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap" [ngClass]="{'post-reverse': this.index % 2 === 0}">
     <div class="featured-image" [ngStyle]="{'background-image': 'url('+this.featuredImage+')'}">
       <div class="image-hover-icon">
         <fa-icon [icon]="faBookOpen" ></fa-icon>

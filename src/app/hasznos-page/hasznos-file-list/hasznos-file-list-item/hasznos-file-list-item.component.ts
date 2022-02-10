@@ -8,7 +8,7 @@ import { WebFile } from './webfile';
   templateUrl: './hasznos-file-list-item.component.html',
   styleUrls: ['./hasznos-file-list-item.component.scss']
 })
-export class HasznosFileListItemComponent implements OnInit {
+export class HasznosFileListItemComponent {
 
   @Input() file:WebFile;
   @Input() password:string
@@ -18,8 +18,6 @@ export class HasznosFileListItemComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
   getFile(uri:string): Observable<HttpEvent<Blob>> {   
     const httpOptions = {
       headers: new HttpHeaders({

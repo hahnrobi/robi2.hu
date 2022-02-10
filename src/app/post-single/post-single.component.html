@@ -4,25 +4,25 @@
 </div>
 <div *ngIf="this.loaded" style="margin-top: 10px">
 <button [routerLink]="['/posts']" class="button mb-2">Vissza a posztokhoz</button>
-<article id="{{post.fields.slug}}" [@bgImgTrigger]>
-<div *ngIf="this.hasFeaturedImage" class="featured-image" style="background-image: url('{{ post.fields.featuredImage.fields.file.url }}')">
-  <img src="{{post.fields.featuredImage.fields.file.url}}" style="display: none" (load)="this.isFeaturedImageLoaded = true" />
+<article id="{{post.slug}}" [@bgImgTrigger]>
+<div *ngIf="this.hasFeaturedImage" class="featured-image" style="background-image: url('{{ post.featuredImage }}')">
+  <img src="{{post.featuredImage}}" style="display: none" (load)="this.isFeaturedImageLoaded = true" />
   <app-loader-animation *ngIf="!this.isFeaturedImageLoaded"></app-loader-animation>
-  <p class="article-featured-image-copyright" [innerHTML]="post.fields.featuredImageCopyrightText"></p>
+  <p class="article-featured-image-copyright" [innerHTML]="post.featuredImageCopyrightText"></p>
 </div>
 <div class="article-inner">
 
-  <h1 class="post-title">{{ post.fields.title }}</h1>
+  <h1 class="post-title">{{ post.title }}</h1>
   <div class="post-meta">
     <div class="post-author">
-      <img style="width: 64px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+      <img style="width: 64px" src="{{ post.author.profilePicture }}" />{{post.author.name}}
     </div>
     <div class="post-date">
       <fa-icon [icon]="faCalendarAlt"></fa-icon>
-      {{ post.fields.publishDate | date:'yyyy.MM.dd.' }}
+      {{ post.publishDate | date:'yyyy.MM.dd.' }}
     </div>
   </div>
-  <div class="post-content" [innerHTML]="_returnHtmlFromRichText(post.fields.content)">
+  <div class="post-content" [innerHTML]="(post.content)">
 
   </div>
 </div>

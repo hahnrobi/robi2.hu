@@ -17,6 +17,8 @@ import {
   keyframes
 } from '@angular/animations';
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
+import { SinglePost } from '../models/single-post';
+import { PostsService } from '../post.service';
 
 @Component({
   selector: 'app-post-single',
@@ -31,58 +33,39 @@ import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 })
 export class PostSingleComponent implements OnInit {
 
-  post : Entry<any>;
+  post: SinglePost;
   hasFeaturedImage: boolean = false;
   isFeaturedImageLoaded: boolean = false;
   loaded: boolean = false;
   faCalendarAlt = faCalendarAlt;
 
-  constructor(private route: ActivatedRoute, private router: Router, private contentfulService: ContentfulService, private serviceTitle:Title) {
+  constructor(private route: ActivatedRoute, private router: Router, private postService: PostsService, private serviceTitle:Title) {
     this.serviceTitle.setTitle("Betöltés...");
   }
 
   ngOnInit(): void {
-    const postSlug = this.route.snapshot.paramMap.get("id");
-    this.contentfulService.getPost(postSlug).then((post) => {
+    const postSlug = this.route.snapshot.paramMap.get("id") as string;
+    this.postService.getPost(postSlug).subscribe( 
+      {
+        next: (post) => {
       if(post === undefined || post === null) {
         this.router.navigate(["404"]);
       }
       setTimeout(()=>{
         this.post = post;
-        this.serviceTitle.setTitle(this.post.fields.title);
-        if (this.post.fields.featuredImage != null) {
+        this.serviceTitle.setTitle(this.post.title);
+        if (this.post.featuredImage != null) {
           this.hasFeaturedImage = true;
         }
         this.loaded = true;
         console.log(this.post);
-        console.log(this._returnHtmlFromRichText(this.post.fields.content));
-        console.log(typeof(this._returnHtmlFromRichText(this.post.fields.content)));
         //console.log(this.post.fields.content);
 
        }, 0)
-
-    }).catch(err => {
+    },
+    error: err => {
       this.router.navigate(["404"]);
-    });
+    }});
   }
 
-  _returnHtmlFromRichText(richText:any) {
-
-    if (richText === undefined || richText === null || richText.nodeType !== 'document') {
-      return '<p>Error</p>';
-    }
-    const options = {
-      renderNode: {
-        [INLINES. HYPERLINK]: (node, next) => {
-          if(node.data.uri.startsWith('https://robi2.hu') || node.data.uri.startsWith('http://robi2.hu')) {
-            return `<a href="${node.data.uri}">${next(node.content)}</a>`;
-          }else{
-            return `<a href="${node.data.uri}" target="_blank" >${next(node.content)}</a>`;
-          }
-
-        }
-      }
-    }
-    return documentToHtmlString(richText, options);
-}
 }

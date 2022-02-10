@@ -25,6 +25,9 @@
           "defaultConfiguration": "development",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "showdown"
+           ],
             "outputPath": "dist/robi2",
             "index": "src/index.html",
             "main": "src/main.ts",

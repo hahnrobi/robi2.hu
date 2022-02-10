@@ -27,6 +27,7 @@ import { StatusComponent } from './status/status.component';
 import { AppearDirective } from './appear.directive';
 import { MarkdownModule } from './post-single/markdown/markdown.module';
 import { PostsService } from './post.service';
+import { ShowdownModule } from 'ngx-showdown';
 
 
 
@@ -58,7 +59,7 @@ import { PostsService } from './post.service';
     BrowserAnimationsModule,
     LoaderAnimationModule,
     FontAwesomeModule,
-    MarkdownModule
+    ShowdownModule.forRoot({emoji: true, noHeaderId: true, flavor: 'github'})
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

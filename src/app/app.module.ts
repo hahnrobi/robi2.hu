@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostSingleComponent } from './post-single/post-single.component';
-import { MdToHtmlPipe } from './md-to-html.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
@@ -28,7 +27,8 @@ import { AppearDirective } from './appear.directive';
 //import { MarkdownModule } from './post-single/markdown/markdown.module';
 import { PostsService } from './post.service';
 import { ShowdownModule } from 'ngx-showdown';
-
+//import highlightExtension from 'showdown-highlight';
+const showdownHighlight = require("showdown-highlight")
 
 
 @NgModule({
@@ -36,7 +36,6 @@ import { ShowdownModule } from 'ngx-showdown';
     AppComponent,
     PostListComponent,
     PostSingleComponent,
-    MdToHtmlPipe,
     DiscordWidgetPageComponent,
     DarkModeSwitchComponent,
     SinglePostComponent,
@@ -59,7 +58,7 @@ import { ShowdownModule } from 'ngx-showdown';
     BrowserAnimationsModule,
     LoaderAnimationModule,
     FontAwesomeModule,
-    ShowdownModule.forRoot({emoji: true, noHeaderId: true, flavor: 'github'})
+    ShowdownModule.forRoot({emoji: true, noHeaderId: true, flavor: 'github', extensions: [ showdownHighlight ]})
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

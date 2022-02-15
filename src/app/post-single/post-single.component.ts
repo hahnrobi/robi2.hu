@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Showdown from 'showdown';
+const showdownHighlight = require("showdown-highlight")
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
@@ -20,13 +21,16 @@ import { PostsService } from '../post.service';
 @Component({
   selector: 'app-post-single',
   templateUrl: './post-single.component.html',
-  styleUrls: ['./post-single.component.scss'],
+  styleUrls: [
+    './post-single.component.scss',
+    '../../../node_modules/highlight.js/scss/shades-of-purple.scss'
+  ],
   animations: [
     trigger('bgImgTrigger', [
       transition(":enter", [style({transform: 'scaleX(0) scaleY(0)'}), animate('500ms ease')])
     ])
   ],
-  //encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class PostSingleComponent implements OnInit {
 
@@ -41,6 +45,7 @@ export class PostSingleComponent implements OnInit {
     emoji: true,
     flavor: "github"
   };
+
 
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostsService, private serviceTitle:Title) {
     this.serviceTitle.setTitle("Betöltés...");
@@ -63,6 +68,9 @@ export class PostSingleComponent implements OnInit {
         this.loaded = true;
         console.log(this.post);
         //console.log(this.post.fields.content);
+
+
+
 
        }, 0)
     },

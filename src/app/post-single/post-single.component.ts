@@ -41,9 +41,9 @@ export class PostSingleComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
 
   showdownOptions: Showdown.ShowdownOptions = {
-    smartIndentationFix: true,
+    smartIndentationFix: false,
     emoji: true,
-    flavor: "github"
+    //flavor: "github"
   };
 
 

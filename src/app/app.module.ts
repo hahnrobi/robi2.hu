@@ -24,10 +24,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { OtherComponent } from './other/other.component';
 import { StatusComponent } from './status/status.component';
 import { AppearDirective } from './appear.directive';
-//import { MarkdownModule } from './post-single/markdown/markdown.module';
 import { PostsService } from './post.service';
 import { ShowdownModule } from 'ngx-showdown';
-//import highlightExtension from 'showdown-highlight';
 const showdownHighlight = require("showdown-highlight")
 
 

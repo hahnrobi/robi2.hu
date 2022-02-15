@@ -5,11 +5,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { PostSingleComponent } from './post-single/post-single.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
@@ -25,15 +23,15 @@ import { OtherComponent } from './other/other.component';
 import { StatusComponent } from './status/status.component';
 import { AppearDirective } from './appear.directive';
 import { PostsService } from './post.service';
-import { ShowdownModule } from 'ngx-showdown';
-const showdownHighlight = require("showdown-highlight")
+import { PostSingleModule } from './post-single/post-single.module';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
-    PostSingleComponent,
     DiscordWidgetPageComponent,
     DarkModeSwitchComponent,
     SinglePostComponent,
@@ -56,7 +54,8 @@ const showdownHighlight = require("showdown-highlight")
     BrowserAnimationsModule,
     LoaderAnimationModule,
     FontAwesomeModule,
-    ShowdownModule.forRoot({emoji: true, noHeaderId: true, flavor: 'github', extensions: [ showdownHighlight ]})
+    PostSingleModule,
+    
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

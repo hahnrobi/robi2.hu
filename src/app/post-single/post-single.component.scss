@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css');
 article {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   div.featured-image {
@@ -67,14 +68,36 @@ article {
       }
 
     }
-    code:not(.hljs) {
+    pre {
+      margin: 0;
+    }
+    code {
       font-weight: 500;
-      color: #333;
       font-family: 'Fira Code', monospace;
     }
-    code.hljs {
+    code:not(.hljs) {
+      color: #333;
+    }
+    div.codewindow {
+      background: #2d2b57;
       border-radius: 3px;
-      padding: 2rem
+      padding: 1rem;
+      header {
+        display: flex;
+        color: white;
+        .lang-info {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .lang-icon {
+            display: block;
+            margin-right: .5rem;
+          }
+        }
+      }
+      code.hljs {
+
+      }
     }
 
   }

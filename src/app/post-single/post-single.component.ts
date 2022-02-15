@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Showdown from 'showdown';
-const showdownHighlight = require("showdown-highlight")
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
@@ -43,7 +42,6 @@ export class PostSingleComponent implements OnInit {
   showdownOptions: Showdown.ShowdownOptions = {
     smartIndentationFix: false,
     emoji: true,
-    //flavor: "github"
   };
 
 

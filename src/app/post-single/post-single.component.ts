@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import * as Showdown from 'showdown';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
@@ -34,6 +35,12 @@ export class PostSingleComponent implements OnInit {
   isFeaturedImageLoaded: boolean = false;
   loaded: boolean = false;
   faCalendarAlt = faCalendarAlt;
+
+  showdownOptions: Showdown.ShowdownOptions = {
+    smartIndentationFix: true,
+    emoji: true,
+    flavor: "github"
+  };
 
   constructor(private route: ActivatedRoute, private router: Router, private postService: PostsService, private serviceTitle:Title) {
     this.serviceTitle.setTitle("Betöltés...");

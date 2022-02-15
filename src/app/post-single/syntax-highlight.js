@@ -56,7 +56,6 @@ module.exports = function showdownHighlight() {
           left = left.replace('<pre>', "<pre class=\"" + lang + " language-" + lang + "\">");
         }
 
-    console.log(showdownHighlight);
         const language_typings = {
             "javascript": "JavaScript",
             "json": "JSON",

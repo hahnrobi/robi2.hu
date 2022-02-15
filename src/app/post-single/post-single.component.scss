@@ -34,18 +34,18 @@ article {
     max-width: 800px;
     margin: auto;
     h2{
-      background: #c90415;
+      //background: #c90415;
       display: inline-block;
       clear: both;
       margin-inline: 20px;
       font-weight: 700;
       font-family: "Roboto Condensed";
-      color: white;
+      color: var(--red);
       padding: 5px;
       margin-top: 40px;
       margin-bottom: 30px;
       margin-inline: -5px;
-      box-shadow: -10px 0px 0px #c90415, 10px 0px 0px #c90415, 0px 0px 10px #c90415;
+      //box-shadow: -10px 0px 0px #c90415, 10px 0px 0px #c90415, 0px 0px 10px #c90415;
     }
     blockquote {
       background: var(--red-lightest);
@@ -82,8 +82,10 @@ article {
       background: #2d2b57;
       border-radius: 3px;
       padding: 1rem;
+      margin-bottom: 1rem;
       header {
         display: flex;
+        justify-content: space-between;
         color: white;
         .lang-info {
           display: flex;
@@ -92,8 +94,31 @@ article {
           .lang-icon {
             display: block;
             margin-right: .5rem;
+            &.devicon-csharp-plain.colored {
+              color: white !important;
+            }
+          }
+          .lang-name {
+            opacity: .8;
           }
         }
+        .copybtn {
+          border: 0;
+          background: none;
+          border-radius: 3px;
+          transition: .2s all;
+          &:focus{
+            outline: 0;
+          }
+          &:active {
+            transform: scale(1.2);
+            background: rgba(255,255,255,.2);
+            opacity: .8;
+          }
+        }
+      }
+      .raw-code {
+        display: none;
       }
       code.hljs {
 

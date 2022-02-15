@@ -65,8 +65,8 @@ module.exports = function showdownHighlight() {
             "cplusplus": "C++",
             "php": "PHP"
         }
-        const lang_title = Object.keys(language_typings).includes(lang) ? language_typings[lang] : lang
-        left = '<div class="codewindow"><header><div class="lang-info"><i class="lang-icon devicon-' + lang + '-plain colored"></i><span class="lang-name">' + lang_title + '</span></div><span class="copybtn"></span></header>' + left;
+        const lang_title = Object.keys(language_typings).includes(lang) ? language_typings[lang] : lang !== undefined ? lang : "";
+        left = '<div class="codewindow"><header><div class="lang-info"><i class="lang-icon devicon-' + lang + '-plain colored"></i><span class="lang-name">' + lang_title + '</span></div><button aria-label="Másolás a vágólapra" title="Másolás a vágólapra" class="copybtn" onclick="navigator.clipboard.writeText(this.parentElement.parentElement.getElementsByClassName(\'raw-code\')[0].innerText)">📋</button></header><pre class="raw-code">' + match + '</pre>' + left;
         right = right + "</div>";
 
         if (lang && hljs.getLanguage(lang)) {

@@ -41,7 +41,9 @@ export class PostSingleComponent implements OnInit {
 
   showdownOptions: Showdown.ShowdownOptions = {
     smartIndentationFix: false,
+    simpleLineBreaks: true,
     emoji: true,
+    noHeaderId: false
   };
 
 

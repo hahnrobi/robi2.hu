@@ -66,12 +66,6 @@ export class PostSingleComponent implements OnInit {
           this.hasFeaturedImage = true;
         }
         this.loaded = true;
-        console.log(this.post);
-        //console.log(this.post.fields.content);
-
-
-
-
        }, 0)
     },
     error: err => {

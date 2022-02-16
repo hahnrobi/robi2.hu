@@ -68,16 +68,6 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.postService.getPosts(0, this.pagination)
-    .subscribe(x => 
-      {
-        console.log(x);
-        this.postCount = x.total;
-        this.pagesNum = Array( Math.ceil( this.postCount/x.limit ) ).fill( 0 ).map( ( x,i )=>i )
-        console.log(this.pagesNum)
-      }
-    );
-
     this.loadPosts(0, this.pagination);
   }
 
@@ -93,6 +83,8 @@ export class PostListComponent implements OnInit {
       .subscribe(
         response => 
         {
+          this.postCount = response.total;
+          this.pagesNum = Array( Math.ceil( this.postCount/response.limit ) ).fill( 0 ).map( ( x,i )=>i )
           this.posts = response.posts; this.loaded = true;
         }
       );

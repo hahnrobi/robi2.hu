@@ -30,6 +30,9 @@ jobs:
       if: steps.setup_node.outputs.cache-hit != 'true'
       run: |
         npm ci
+    - name: Install Angular CLI
+      run: |
+        npm i @angular/cli
     - name: Build
       run: |
          ng build --configuration production

@@ -36,6 +36,12 @@ jobs:
     - name: Build
       run: |
          ng build --configuration production
+    - name: Archive build
+      if: success()
+      uses: actions/upload-artifact@v1
+      with:
+        name: deploy_dist
+        path: dist
        
   deploy:
     runs-on: ubuntu-latest
@@ -43,12 +49,17 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+    - name: ⬇️ Download build
+      uses: actions/download-artifact@v1
+      with:
+          name: deploy_dist
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
         server: ${{ secrets.FTP_HOST }}
         protocol: ftps
+        local-dir: deploy_dist/robi2
         server-dir: ${{ secrets.FTP_DIR }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}

@@ -24,7 +24,7 @@ export class AppComponent {
   }
   mobileMenuToggleIcon = faBars;
   menuIcons = [faAddressCard, faComments, faLink, faDiscord, faCode, faPlus, faToolbox, faHeartbeat];
-  footerIcons = [faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub];
+  footerIcons = [faGithub, faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub];
 
   prepareRouter(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];

@@ -4,14 +4,20 @@ const highlight = require("./syntax-highlight.js")
 const headingLink = require("./heading-link.js")
 import { CommonModule } from '@angular/common';
 import { PostSingleComponent } from './post-single.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+const routes: Routes = [
+  {
+    path: ':id',
+    component: PostSingleComponent
+  }
+];
 @NgModule({
   declarations: [
     PostSingleComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule.forChild(routes),
     ShowdownModule.forRoot({extensions: [highlight, headingLink] })
 
   ]

@@ -7,11 +7,9 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostListComponent } from './post-list/post-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DiscordWidgetPageComponent } from './discord-widget-page/discord-widget-page.component';
 import { DarkModeSwitchComponent } from './dark-mode-switch/dark-mode-switch.component';
-import { SinglePostComponent } from './post-list/single-post/single-post.component';
 import { EmojiPipePipe } from './emoji-pipe.pipe';
 import { HasznosPageComponent } from './hasznos-page/hasznos-page.component';
 import { HasznosFileListComponent } from './hasznos-page/hasznos-file-list/hasznos-file-list.component';
@@ -24,6 +22,7 @@ import { StatusComponent } from './status/status.component';
 import { AppearDirective } from './appear.directive';
 import { PostsService } from './post.service';
 import { PostSingleModule } from './post-single/post-single.module';
+import { PostListModule } from './post-list/post-list.module';
 
 
 
@@ -31,10 +30,8 @@ import { PostSingleModule } from './post-single/post-single.module';
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent,
     DiscordWidgetPageComponent,
     DarkModeSwitchComponent,
-    SinglePostComponent,
     EmojiPipePipe,
     HasznosPageComponent,
     HasznosFileListComponent,
@@ -54,8 +51,7 @@ import { PostSingleModule } from './post-single/post-single.module';
     BrowserAnimationsModule,
     LoaderAnimationModule,
     FontAwesomeModule,
-    PostSingleModule,
-    
+    PostSingleModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

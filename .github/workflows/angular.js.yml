@@ -59,6 +59,7 @@ jobs:
       with:
         server: ${{ secrets.FTP_HOST }}
         protocol: ftps
+        log-level: verbose
         local-dir: deploy_dist/robi2/
         server-dir: ${{ secrets.FTP_DIR }}
         username: ${{ secrets.FTP_USERNAME }}

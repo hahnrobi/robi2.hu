@@ -34,11 +34,8 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
     ])
   ]
 })
-export class UptimeGroupComponent implements OnInit {
+export class UptimeGroupComponent {
   @Input() group:UptimeGroup;
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

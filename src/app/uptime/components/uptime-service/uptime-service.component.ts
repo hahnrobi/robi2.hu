@@ -7,12 +7,9 @@ import { faClock } from '@fortawesome/free-regular-svg-icons';
   templateUrl: './uptime-service.component.html',
   styleUrls: ['./uptime-service.component.scss']
 })
-export class UptimeServiceComponent implements OnInit {
+export class UptimeServiceComponent {
   @Input() site:UptimeSite
   lastCheckIcon = faClock
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entry } from 'contentful';
 import { faCalendarAlt, faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { SinglePost } from 'src/app/models/single-post';
 
 @Component({
   selector: 'app-single-post',
@@ -9,7 +9,7 @@ import { faCalendarAlt, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 })
 export class SinglePostComponent implements OnInit {
 
-  @Input() post:Entry<any>;
+  @Input() post:SinglePost;
   @Input() index:number;
   featuredImage :string = "assets/images/red_diamond_detail.jpg";
   loaded: boolean = false;
@@ -19,12 +19,10 @@ export class SinglePostComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.post);
-  }
+  ngOnInit(): void {  }
   setFeaturedImage() {
-    if(this.post.fields.hasOwnProperty('featuredImage')) {
-      this.featuredImage = this.post.fields.featuredImage.fields.file.url;
+    if(this.post.hasOwnProperty('featuredImage')) {
+      this.featuredImage = this.post.featuredImage;
     }
 
   }

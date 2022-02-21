@@ -26,8 +26,16 @@ const routes: Routes = [
     loadChildren: () => import('./uptime/uptime.module').then(m => m.UptimeModule),
     data: {animation: "uptime"}
   },
-  { "path": "posts", component: PostListComponent, data: {animation: "posts"}},
-  { "path": "post/:id", component: PostSingleComponent, data: {animation: "post/:id"}},
+  { 
+    "path": "posts",
+    //component: PostListComponent,
+    loadChildren: () => import('./post-list/post-list.module').then(m => m.PostListModule),
+    data: {animation: "posts"}},
+  { 
+    "path": "post/:id",
+    component: PostSingleComponent,
+    data: {animation: "post/:id"}
+  },
   { "path": ":id", component: PostSingleComponent},
   { "path": "*", component: NotFoundComponent}
 

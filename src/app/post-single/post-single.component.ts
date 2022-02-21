@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import * as Showdown from 'showdown';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { ContentfulService } from "../contentful.service";
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
-import { Entry } from "contentful";
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {
@@ -17,11 +14,16 @@ import {
   keyframes
 } from '@angular/animations';
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
+import { SinglePost } from '../models/single-post';
+import { PostsService } from '../post.service';
 
 @Component({
   selector: 'app-post-single',
   templateUrl: './post-single.component.html',
-  styleUrls: ['./post-single.component.scss'],
+  styleUrls: [
+    './post-single.component.scss',
+    '../../../node_modules/highlight.js/scss/shades-of-purple.scss'
+  ],
   animations: [
     trigger('bgImgTrigger', [
       transition(":enter", [style({transform: 'scaleX(0) scaleY(0)'}), animate('500ms ease')])
@@ -31,58 +33,44 @@ import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 })
 export class PostSingleComponent implements OnInit {
 
-  post : Entry<any>;
+  post: SinglePost;
   hasFeaturedImage: boolean = false;
   isFeaturedImageLoaded: boolean = false;
   loaded: boolean = false;
   faCalendarAlt = faCalendarAlt;
 
-  constructor(private route: ActivatedRoute, private router: Router, private contentfulService: ContentfulService, private serviceTitle:Title) {
+  showdownOptions: Showdown.ShowdownOptions = {
+    smartIndentationFix: false,
+    simpleLineBreaks: true,
+    emoji: true,
+    noHeaderId: false
+  };
+
+
+  constructor(private route: ActivatedRoute, private router: Router, private postService: PostsService, private serviceTitle:Title) {
     this.serviceTitle.setTitle("Betöltés...");
   }
 
   ngOnInit(): void {
-    const postSlug = this.route.snapshot.paramMap.get("id");
-    this.contentfulService.getPost(postSlug).then((post) => {
+    const postSlug = this.route.snapshot.paramMap.get("id") as string;
+    this.postService.getPost(postSlug).subscribe( 
+      {
+        next: (post) => {
       if(post === undefined || post === null) {
         this.router.navigate(["404"]);
       }
       setTimeout(()=>{
         this.post = post;
-        this.serviceTitle.setTitle(this.post.fields.title);
-        if (this.post.fields.featuredImage != null) {
+        this.serviceTitle.setTitle(this.post.title);
+        if (this.post.featuredImage != null) {
           this.hasFeaturedImage = true;
         }
         this.loaded = true;
-        console.log(this.post);
-        console.log(this._returnHtmlFromRichText(this.post.fields.content));
-        console.log(typeof(this._returnHtmlFromRichText(this.post.fields.content)));
-        //console.log(this.post.fields.content);
-
        }, 0)
-
-    }).catch(err => {
+    },
+    error: err => {
       this.router.navigate(["404"]);
-    });
+    }});
   }
 
-  _returnHtmlFromRichText(richText:any) {
-
-    if (richText === undefined || richText === null || richText.nodeType !== 'document') {
-      return '<p>Error</p>';
-    }
-    const options = {
-      renderNode: {
-        [INLINES. HYPERLINK]: (node, next) => {
-          if(node.data.uri.startsWith('https://robi2.hu') || node.data.uri.startsWith('http://robi2.hu')) {
-            return `<a href="${node.data.uri}">${next(node.content)}</a>`;
-          }else{
-            return `<a href="${node.data.uri}" target="_blank" >${next(node.content)}</a>`;
-          }
-
-        }
-      }
-    }
-    return documentToHtmlString(richText, options);
-}
 }

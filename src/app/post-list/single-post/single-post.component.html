@@ -1,6 +1,6 @@
-<a routerLink="/{{post.fields.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
+<a routerLink="/{{post.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
 <div class="post">
-  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap" [ngClass]="{'post-reverse': this.index % 2 == 0}">
+  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap" [ngClass]="{'post-reverse': this.index % 2 === 0}">
     <div class="featured-image" [ngStyle]="{'background-image': 'url('+this.featuredImage+')'}">
       <div class="image-hover-icon">
         <fa-icon [icon]="faBookOpen" ></fa-icon>
@@ -13,16 +13,16 @@
     <div class="p-5 post-details">
       <div class="post-meta d-flex align-items-center justify-content-sm-center justify-content-md-start ml-1 row">
         <div class="post-author col-s12 col-md6 mt-1">
-          <img style="width: 32px" src="{{ post.fields.author.fields.profilePicture.fields.file.url }}" />{{post.fields.author.fields.name}}
+          <img style="width: 32px" src="{{ post.author.profilePicture }}" />{{post.author.name}}
         </div>
         <div class="post-date col-s12 col-md6 mt-1">
           <fa-icon [icon]="faCalendarAlt"></fa-icon>
-          {{ post.fields.publishDate | date:'yyyy.MM.dd.' }}
+          {{ post.publishDate | date:'yyyy.MM.dd.' }}
         </div>
       </div>
-      <h1>{{ post.fields.title }}</h1>
+      <h1>{{ post.title }}</h1>
       <p class="post-excerpt">
-        {{post.fields.excerpt}}
+        {{post.excerpt}}
       </p>
     </div>
 

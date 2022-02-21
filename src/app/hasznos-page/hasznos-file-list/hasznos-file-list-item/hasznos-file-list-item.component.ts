@@ -8,7 +8,7 @@ import { WebFile } from './webfile';
   templateUrl: './hasznos-file-list-item.component.html',
   styleUrls: ['./hasznos-file-list-item.component.scss']
 })
-export class HasznosFileListItemComponent implements OnInit {
+export class HasznosFileListItemComponent {
 
   @Input() file:WebFile;
   @Input() password:string
@@ -18,8 +18,6 @@ export class HasznosFileListItemComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
   getFile(uri:string): Observable<HttpEvent<Blob>> {   
     const httpOptions = {
       headers: new HttpHeaders({
@@ -28,7 +26,7 @@ export class HasznosFileListItemComponent implements OnInit {
       }),
       responseType: 'blob'
     };
-    return this.http.get("/hasznos-files/getfile.php?file=" + uri, {
+    return this.http.get("/hasznos-api/getfile.php?file=" + uri, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.password),
       observe: 'events',
       reportProgress: true,
@@ -55,10 +53,11 @@ downloadFile(uri:string,): void {
 
           // IE doesn't allow using a blob object directly as link href
           // instead it is necessary to use msSaveOrOpenBlob
-          if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-              window.navigator.msSaveOrOpenBlob(newBlob);
-              return;
-          }
+          // Obsolote, irrevelant since Angular doesnt support IE
+          //if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+              //window.navigator.msSaveOrOpenBlob(newBlob);
+              //return;
+          //}
 
           // For other browsers: 
           // Create a link pointing to the ObjectURL containing the blob.

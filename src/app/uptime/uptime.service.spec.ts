@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContentfulService } from './contentful.service';
+import { UptimeService } from './uptime.service';
 
-describe('ContentfulService', () => {
-  let service: ContentfulService;
+describe('UptimeService', () => {
+  let service: UptimeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ContentfulService);
+    service = TestBed.inject(UptimeService);
   });
 
   it('should be created', () => {

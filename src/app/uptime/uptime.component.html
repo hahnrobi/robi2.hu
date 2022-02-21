@@ -1,0 +1,11 @@
+<h1>Szolgáltatás állapotok</h1>
+<p>Az alábbi oldal egy rövid összefoglalást mutat a kiszolgált szolgáltatások jelenlegi állapotáról.<br>
+Az oldal tartalma mindössze tájékoztató jellegű, nem támaszt alá semmiféle rendelkezésre állási mérést.</p>
+<div *ngIf="this.uptimes$ | async as uptimes; else loading" [@postAnimation]="this.uptimes.length"  class="groups-container">
+	<app-uptime-group *ngFor="let group of uptimes" [group]=group style="margin-bottom: 2rem">
+	</app-uptime-group>
+	<p>Statistics provided by <a href="https://hetrixtools.com/" rel="noopener noreferrer" target="_blank">HetrixTools</a>.</p>
+</div>
+<ng-template #loading>
+	<app-loader-animation></app-loader-animation>
+</ng-template>

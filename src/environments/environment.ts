@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   blogApiUrl: "//localhost:3000",
   uptimes: {
-    apiUrl: "//robi2.hu/hetrix.php"
+    apiUrl: "https://robi2.hu/hetrix.php"
   }
 };
 

@@ -9,7 +9,9 @@ export class PortfolioService {
   private portfolio:PortfolioItem[] = [
     {
       category: "website",
-      title: "LadyPhoto fotós oldal/galéria",
+      title: "LadyPhoto fotós weboldal/galéria",
+      image: "/assets/images/portfolio/ladyphoto.jpg",
+      url: "https://ladyphoto.hu",
       techs: ["Angular", "Angular Material"],
     },
     {

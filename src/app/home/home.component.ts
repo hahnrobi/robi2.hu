@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     {
       icon: faAngular,
       title: "Front-end",
-      description: "Angular, Next.js és React JavaScript könyvtárak használata CSS, SCSS és HTML mellett."
+      description: "Angular, Nuxt (Vue.js) és React JavaScript könyvtárak használata CSS, SCSS és HTML mellett."
     },
     {
       icon: faServer,

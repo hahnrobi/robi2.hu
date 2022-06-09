@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { interval, ReplaySubject, timer, Observable, Subject, BehaviorSubject } from 'rxjs';
-import { takeUntil, takeWhile, switchMap, share } from 'rxjs/operators';
+import { timer } from 'rxjs';
+import { switchMap, share } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
 import { UptimeGroup } from './model/group';
 

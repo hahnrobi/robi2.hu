@@ -18,7 +18,7 @@ import { animate, query, stagger, style, transition, trigger } from '@angular/an
       ])
     ]),
     trigger('postAnimation', [
-      transition('* => *', [
+      transition('void => *', [
         query(':enter', [
           style({
             transform: 'translateX(-4rem)',
@@ -45,4 +45,8 @@ export class UptimeComponent implements OnInit {
 
   uptimes$ = this.uptimeService.getUptime();
 
+
+  trackByTitle(index: number, value: UptimeGroup) {
+    return value.title;
+  }
 }

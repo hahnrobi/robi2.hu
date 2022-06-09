@@ -10,6 +10,8 @@
 }
 .main-container {
 	min-height: calc(100vh - 41px);
+	padding: 3rem;
+	transition: .2s padding;
 }
 .menu-col {
 	width: 100%;
@@ -19,6 +21,9 @@
 	display: none;
 }
 @media screen and (max-width: 900px) {
+	.main-container {
+		padding: 1rem;
+	}
 	footer {
 		padding-bottom: 40px;
 	}

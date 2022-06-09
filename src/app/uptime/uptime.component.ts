@@ -41,7 +41,6 @@ export class UptimeComponent implements OnInit {
   constructor(private uptimeService:UptimeService) { }
 
   ngOnInit(): void {
-    this.uptimeService.updateUptimeData();
   }
 
   uptimes$ = this.uptimeService.getUptime();

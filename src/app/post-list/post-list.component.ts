@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { faCalendarAlt, faLaptop, faServer } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faLaptop, faServer } from '@fortawesome/pro-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {
   trigger,

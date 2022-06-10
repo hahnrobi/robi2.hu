@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { faAngular, faDiscord, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faLaptop, faLink, faServer } from '@fortawesome/free-solid-svg-icons';
+import { faLaptop, faLink, faServer } from '@fortawesome/pro-solid-svg-icons';
 import {
   trigger,
   transition,

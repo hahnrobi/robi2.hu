@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faCalendarAlt, faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faBookOpen } from '@fortawesome/pro-solid-svg-icons';
 import { SinglePost } from 'src/app/models/single-post';
 
 @Component({

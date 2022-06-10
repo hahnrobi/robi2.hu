@@ -1,4 +1,4 @@
-import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/pro-solid-svg-icons';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {

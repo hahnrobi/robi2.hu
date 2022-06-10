@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Showdown from 'showdown';
 import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt } from '@fortawesome/pro-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
 import {
   trigger,

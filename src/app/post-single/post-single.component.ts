@@ -13,7 +13,7 @@ import {
   animate,
   keyframes
 } from '@angular/animations';
-import { faCentercode } from '@fortawesome/free-brands-svg-icons';
+import { faBlockQuestion } from '@fortawesome/pro-solid-svg-icons';
 import { SinglePost } from '../models/single-post';
 import { PostsService } from '../post.service';
 
@@ -38,6 +38,8 @@ export class PostSingleComponent implements OnInit {
   isFeaturedImageLoaded: boolean = false;
   loaded: boolean = false;
   faCalendarAlt = faCalendarAlt;
+
+  faBlockQuestion = faBlockQuestion;
 
   showdownOptions: Showdown.ShowdownOptions = {
     smartIndentationFix: false,

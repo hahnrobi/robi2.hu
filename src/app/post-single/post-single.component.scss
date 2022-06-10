@@ -171,9 +171,27 @@ article {
 }
 div.blog-info {
   max-width: 800px;
-
-  border-top: 2px solid var(--red);
-  padding-top: 20px;
+  background: var(--red-lightest);
+  /*border-top: 2px solid var(--red);*/
+  border-radius: 5px;
+  padding: 2rem;
   margin: auto;
   margin-top: 30px;
+  div.blog-info-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    h3 {
+      margin: 0;
+      margin-left: 1rem;
+      font-weight: 600;
+    }
+    fa-icon {
+      height: 100%;
+      color: var(--red);
+      font-size: 2rem;
+      margin-bottom: .1rem;
+    }
+  }
 }

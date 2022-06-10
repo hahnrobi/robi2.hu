@@ -5,6 +5,7 @@ const headingLink = require("./heading-link.js")
 import { CommonModule } from '@angular/common';
 import { PostSingleComponent } from './post-single.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 const routes: Routes = [
   {
     path: ':id',
@@ -18,8 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ShowdownModule.forRoot({extensions: [highlight, headingLink] })
-
+    ShowdownModule.forRoot({extensions: [highlight, headingLink] }),
+    FontAwesomeModule
   ]
 })
 export class PostSingleModule { }

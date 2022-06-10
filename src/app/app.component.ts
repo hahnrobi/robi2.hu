@@ -2,7 +2,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { Component, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faAddressCard, faBars, faCode, faComments, faHeartbeat, faLink, faPlus, faToolbox } from '@fortawesome/pro-solid-svg-icons';
+import { faAddressCard, faBars, faCode, faComments, faHeartbeat, faLink, faPlus, faToolbox} from '@fortawesome/pro-duotone-svg-icons';
 import { blurer} from './route-animations';
 
 @Component({

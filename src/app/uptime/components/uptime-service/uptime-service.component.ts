@@ -1,6 +1,6 @@
 import { UptimeSite } from '../../model/site';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { faClock } from '@fortawesome/pro-regular-svg-icons';
+import { faClock } from '@fortawesome/pro-duotone-svg-icons';
 
 @Component({
   selector: 'app-uptime-service',

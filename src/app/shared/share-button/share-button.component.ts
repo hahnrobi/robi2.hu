@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-share-button',
   templateUrl: './share-button.component.html',
-  styleUrls: ['./share-button.component.scss']
+  styleUrls: ['./share-button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShareButtonComponent implements OnInit {
 

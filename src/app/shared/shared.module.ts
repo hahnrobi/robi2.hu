@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShareButtonComponent } from './share-button/share-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -9,7 +10,8 @@ import { ShareButtonComponent } from './share-button/share-button.component';
     ShareButtonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     ShareButtonComponent

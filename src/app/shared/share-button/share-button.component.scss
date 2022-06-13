@@ -1,0 +1,10 @@
+fa-icon {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .2s all;
+}
+fa-icon:hover {
+    color: var(--red);
+
+}

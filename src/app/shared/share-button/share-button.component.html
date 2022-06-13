@@ -1,1 +1,6 @@
-<p>share-button works!</p>
+<fa-icon
+    *ngIf="canShare()" 
+    (click)="share()"
+    [icon]="shareIcon"
+    title="Megosztom">
+</fa-icon>

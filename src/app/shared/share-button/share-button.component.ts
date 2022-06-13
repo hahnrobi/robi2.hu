@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { faShareNodes} from '@fortawesome/pro-regular-svg-icons';
 
 @Component({
   selector: 'app-share-button',
@@ -12,6 +13,8 @@ export class ShareButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  shareIcon = faShareNodes;
 
   share() {
     navigator.share(this.getDataToShare());

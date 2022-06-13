@@ -24,9 +24,6 @@ import { PostsService } from './post.service';
 import { PostSingleModule } from './post-single/post-single.module';
 import { PostListModule } from './post-list/post-list.module';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

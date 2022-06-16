@@ -41,7 +41,7 @@ import { PostListModule } from './post-list/post-list.module';
     AppearDirective,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CommonModule,
     AppRoutingModule,
     HttpClientModule,

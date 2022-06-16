@@ -28,7 +28,7 @@
             "allowedCommonJsDependencies": [
               "showdown"
            ],
-            "outputPath": "dist/robi2",
+            "outputPath": "dist/robi2/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -137,6 +137,66 @@
               "src/**/*.html"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/robi2/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "robi2:build:development",
+              "serverTarget": "robi2:server:development"
+            },
+            "production": {
+              "browserTarget": "robi2:build:production",
+              "serverTarget": "robi2:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "robi2:build:production",
+              "serverTarget": "robi2:server:production"
+            },
+            "development": {
+              "browserTarget": "robi2:build:development",
+              "serverTarget": "robi2:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

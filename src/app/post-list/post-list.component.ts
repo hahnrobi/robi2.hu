@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from "@angular/router";
 import { faCalendarAlt, faLaptop, faServer } from '@fortawesome/pro-solid-svg-icons';
 import { Title } from '@angular/platform-browser';
@@ -16,6 +16,7 @@ import {
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { SinglePost } from '../models/single-post';
 import { PostsService } from '../post.service';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-post-list',
@@ -63,11 +64,14 @@ export class PostListComponent implements OnInit {
   imageLoading: boolean = true;
   faCalendarAlt = faCalendarAlt;
 
-  constructor(private router : Router, private postService: PostsService, private titleService:Title) {
+  constructor(@Inject(PLATFORM_ID) private platformId, private router : Router, private postService: PostsService, private titleService:Title) {
     this.titleService.setTitle("Posztok");
   }
 
   ngOnInit(): void {
+    if(isPlatformServer(this.platformId)) {
+      this.loaded = true;
+    }
     this.loadPosts(0, this.pagination);
   }
 

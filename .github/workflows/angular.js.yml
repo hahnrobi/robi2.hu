@@ -62,7 +62,7 @@ jobs:
           name: deploy_dist
     
     - name: 📂 Sync files
-      uses: mdallasanta/ssh-scp-deploy@1.2.0
+      uses: mdallasanta/ssh-scp-deploy@v1.2.0
       with:
         host: ${{ secrets.SSH_HOST }}
         port: ${{ secrets.SSH_PORT }}

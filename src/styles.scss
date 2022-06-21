@@ -14,7 +14,7 @@
   --btn: var(--red);
   --btn-hover: #D12938;
   --btn-light: transparent;
-  --btn-light-hover: #dfdfdf;
+  --btn-light-hover: #ffe4e4;
   --red-light: #b34f58;
   --red-lightest: #ffe6e8;
 	}
@@ -75,6 +75,7 @@ h1 {
   background: var(--btn-light);
   color: var(--red) !important;
   box-shadow: none;
+  font-weight: 600 !important;
   &:hover {
     box-shadow: none;
     background: var(--btn-light-hover);

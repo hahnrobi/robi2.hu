@@ -3,7 +3,7 @@
     </app-loader-animation>
 </div>
 <div *ngIf="this.loaded" style="margin-top: 10px">
-<button [routerLink]="['/posts']" class="button mb-2">Vissza a posztokhoz</button>
+<button [routerLink]="['/posts']" class="button button-light mb-2 back-to-posts-btn"><fa-icon [icon]="backToPostsIcon"></fa-icon>Vissza a posztokhoz</button>
 <article id="{{post.slug}}" [@bgImgTrigger]>
 <div *ngIf="this.hasFeaturedImage" class="featured-image" style="background-image: url('{{ post.featuredImage }}')">
   <img src="{{post.featuredImage}}" style="display: none" (load)="this.isFeaturedImageLoaded = true" />
@@ -15,7 +15,10 @@
   <h1 class="post-title">{{ post.title }}</h1>
   <div class="post-meta">
     <div class="post-author">
-      <img style="width: 64px" src="{{ post.author.profilePicture }}" />{{post.author.name}}
+      <button class="button-light" [routerLink]="['/']">
+        <img style="width: 32px" src="{{ post.author.profilePicture }}" />
+        {{post.author.name}}
+      </button>
     </div>
     <div class="post-date">
       <fa-icon [icon]="faCalendarAlt"></fa-icon>

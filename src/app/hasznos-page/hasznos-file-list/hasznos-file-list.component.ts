@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HttpEvent, HttpEventType, HttpHeaders, HttpClient, HttpResponse, HttpProgressEvent } from '@angular/common/http';
 import { Files } from './files';
@@ -71,7 +72,7 @@ export class HasznosFileListComponent implements OnInit, OnChanges {
       })
     };
     console.log("Getting file list...");
-    this.http.get<File>("/hasznos-api/", httpOptions).subscribe((data:any) => {this.files = data; this.filesLoaded = true;});
+    this.http.get<File>(environment.hasznosApiUrl, httpOptions).subscribe((data:any) => {this.files = data; this.filesLoaded = true;});
   }
     
 

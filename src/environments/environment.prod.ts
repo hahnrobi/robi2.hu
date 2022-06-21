@@ -4,5 +4,5 @@ export const environment = {
   uptimes: {
     apiUrl: "https://legacy.robi2.hu/hetrix.php"
   },
-  hasznosApiUrl: "https://legacy.robi2.hu/hasznos-api"
+  hasznosApiUrl: "https://legacy.robi2.hu/hasznos-api/"
 };

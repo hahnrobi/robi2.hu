@@ -20,6 +20,9 @@ export class SinglePostComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {  }
+  hasPostFeaturedImage(): boolean {
+    return this.post.hasOwnProperty('featuredImage')
+  }
   setFeaturedImage() {
     if(this.post.hasOwnProperty('featuredImage')) {
       this.featuredImage = this.post.featuredImage;

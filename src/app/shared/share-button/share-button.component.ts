@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { faShareNodes} from '@fortawesome/pro-regular-svg-icons';
 
 @Component({
@@ -10,6 +10,9 @@ import { faShareNodes} from '@fortawesome/pro-regular-svg-icons';
 export class ShareButtonComponent implements OnInit {
 
   constructor() { }
+
+  @Input('url') inputUrl: string = "";
+  @Input('title') inputTitle: string = "";
 
   ngOnInit(): void {
   }
@@ -33,10 +36,18 @@ export class ShareButtonComponent implements OnInit {
   }
 
   private getDataToShare() {
-    return {
-      url: window.location.href,
-      title: "ROBI2.hu",
-      text: document.title
+    if(this.inputUrl && this.inputTitle) {
+      return {
+        url:this.inputUrl,
+        title: "ROBI2.hu",
+        text: this.inputTitle
+      }
+    }else {
+      return {
+        url: window.location.href,
+        title: "ROBI2.hu",
+        text: document.title
+      }
     }
   }
 

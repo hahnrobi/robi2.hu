@@ -7,34 +7,28 @@ div.post:hover {
     opacity: .85 !important;
   }
 }
-.post-reverse {
-  flex-direction: row-reverse;
-  div.featured-image {
-    border-top-left-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
-}
+
 div.post {
   background: var(--post-list-item-bg);
   box-shadow: 0px 15px 45px -9px rgba(0,0,0,0.20);
   margin-bottom: 20px;
-  max-width: 850px;
   margin: auto;
   transition: .4s all ease-in-out;
-  border-radius: 3px;
+  border-radius: 20px;
   position: relative;
   &:hover {
     box-shadow: 0px 5px 25px -3px rgba(0,0,0,0.20);
 
+  }
+  .post-inner {
+    flex-direction: column;
   }
   a {
     text-decoration: none !important;
   }
   /*TITLE*/
   h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: var(--red);
     text-decoration: none;
     margin-top: 20px;
@@ -59,7 +53,6 @@ div.post {
     }
   }
   .post-details, .featured-image {
-    width: 50%;
     transition: .4s all ease-in-out;
   }
 
@@ -69,17 +62,18 @@ div.post {
   }
   div.post-author {
     img {border-radius: 50000px;}
+    margin-right: 1rem;
   }
   div.featured-image {
-    max-width: 50%;
-    width: 50%;
-    
+    width: 100%;
+    padding-bottom: 56.25%; //16:9
     min-height: 300px;
+    max-height: 500px;
     background-position: center center;
     background-size: cover;
     position: relative;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,8 +86,8 @@ div.post {
       mix-blend-mode: multiply;
       opacity: 0;
       transition: .5s all ease-in-out;
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
       position: absolute;
       left: 0;
       top: 0;
@@ -137,7 +131,6 @@ div.post {
 }
 @media screen and (max-width: 1100px) {
   .post-inner {
-    flex-direction: column !important;
     .featured-image, .post-details {
       width: 100% !important;
       max-width: 100% !important;

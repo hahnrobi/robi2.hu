@@ -14,7 +14,7 @@ import { PostSingleComponent } from './post-single/post-single.component';
 
 const routes: Routes = [
   { "path": "", redirectTo: "about", pathMatch: "full" },
-  { "path": "404", component: NotFoundComponent},
+  { "path": "404", component: NotFoundComponent, data: {animation: "404"}},
   { "path": "about", component: HomeComponent, data: {animation: "about"}}, 
   { "path": "portfolio", component: PortfolioComponent, data: {animation: "portfolio"}}, 
   { "path": "discord", component: DiscordWidgetPageComponent, data: {animation: "discord"}},

@@ -2,3 +2,41 @@
 .post {
 	margin-bottom: 40px !important;
 }
+.post-inner {
+    flex-direction: row !important;
+ }
+ .post-details {
+	width: 60% !important
+ }
+ .featured-image-container {
+	display: block;
+	width: 40%;
+	.featured-image {
+		border-top-right-radius: 0 !important;
+		border-bottom-left-radius: 20px;
+		height: 100%;
+	}
+	.hover-overlay {
+		border-top-right-radius: 0 !important;
+		border-bottom-left-radius: 20px;
+	}
+ }
+ @media screen and (max-width: 1100px) {
+	.post-inner {
+		flex-direction: column !important;
+	}
+	.featured-image-container {
+		width: 100% !important;
+		.featured-image {
+			border-top-right-radius: 20px !important;
+			border-bottom-left-radius: 0px !important;
+		}
+		.hover-overlay {
+			border-top-right-radius: 20px !important;
+			border-bottom-left-radius: 0px !important;
+		}
+	}
+
+
+  
+  }

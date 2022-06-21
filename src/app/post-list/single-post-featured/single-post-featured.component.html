@@ -3,7 +3,7 @@
       class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap"
       style="margin-bottom: 0.6rem"
     >
-      <a routerLink="/{{ post.slug }}"
+      <a routerLink="/{{ post.slug }}" class="featured-image-container"
         ><div
           class="featured-image"
           [ngStyle]="{ 'background-image': 'url(' + this.featuredImage + ')' }"

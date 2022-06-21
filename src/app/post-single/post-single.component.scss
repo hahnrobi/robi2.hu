@@ -76,7 +76,7 @@ article {
       font-family: 'Fira Code', monospace;
     }
     code:not(.hljs) {
-      color: #333;
+      color: var(--red);
     }
     div.codewindow {
       background: #2d2b57;

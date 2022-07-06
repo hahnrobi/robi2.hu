@@ -1,4 +1,4 @@
-# ROBI2.hu
+# ROBI2.hu [![ROBI2.HU CI](https://github.com/hahnrobi/robi2.hu/actions/workflows/angular.js.yml/badge.svg)](https://github.com/hahnrobi/robi2.hu/actions/workflows/angular.js.yml)
 
 This project was made in [Angular](https://angular.io).
 

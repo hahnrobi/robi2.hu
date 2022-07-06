@@ -3,7 +3,7 @@ import { Component, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { faFacebookF, faYoutube, faTwitter, faFlickr, faSpotify, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faAddressCard, faBars, faCode, faComments, faHeartbeat, faLink, faPlus, faToolbox} from '@fortawesome/pro-duotone-svg-icons';
-import { blurer} from './route-animations';
+import { blurer, slideInAnimation} from './route-animations';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    blurer  ]
+    slideInAnimation  ]
 })
 export class AppComponent {
   title = 'robi2';

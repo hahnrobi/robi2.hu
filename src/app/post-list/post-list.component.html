@@ -7,8 +7,11 @@ Az itt megjelenített anyagok szabadon felhasználhatók a <a target="_blank" re
 </div>
 <div *ngIf="this.loaded" class="blog-post-list mt-5 mb-5">
   <div class="post-main" [@postAnimation]="this.posts.length">
-<div *ngFor="let post of this.posts; let i = index" [attr.data.index]="i">
-  <app-single-post [post]="post" [index]="i" class="post-container"></app-single-post>
+  <div class="row">
+  <div *ngFor="let post of this.posts; let i = index" [attr.data.index]="i" [ngClass]="{'col-md-6 col-sm-12 col-12': i !== 0, 'col-md-12 col-sm-12 col-12': i === 0}">
+    <app-single-post *ngIf="i !== 0" [post]="post" [index]="i" class="post-container"></app-single-post>
+    <app-single-post-featured *ngIf="i === 0" [post]="post" [index]="i" class="post-container"></app-single-post-featured>
+  </div>
 </div>
 </div>
 </div>
@@ -17,3 +20,4 @@ Az itt megjelenített anyagok szabadon felhasználhatók a <a target="_blank" re
     {{i+1}}
   </li>
 </ul>
+

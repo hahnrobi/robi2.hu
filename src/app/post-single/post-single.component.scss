@@ -76,7 +76,7 @@ article {
       font-family: 'Fira Code', monospace;
     }
     code:not(.hljs) {
-      color: #333;
+      color: var(--red);
     }
     div.codewindow {
       background: #2d2b57;
@@ -134,10 +134,14 @@ article {
   }
   div.post-author {
     padding: 10px;
+    padding-left: 0;
     color: #c90415 !important;
     font-family: "Roboto Condensed";
     font-weight: 700;
     font-size: 16px;
+    button {
+      margin-left: -.75rem;
+    }
     img {
       border-radius: 5000px;
       margin-right: 10px;
@@ -196,5 +200,11 @@ div.blog-info {
       font-size: 2rem;
       margin-bottom: .1rem;
     }
+  }
+}
+.back-to-posts-btn {
+  margin-left: -.75rem;
+  fa-icon {
+    margin-right: .75rem;
   }
 }

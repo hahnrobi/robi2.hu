@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-  blogApiUrl: "//localhost:3000",
+  blogApiUrl: "https://r2blogapi.carbon.iva.hu",
   uptimes: {
-    apiUrl: "https://robi2.hu/hetrix.php"
-  }
+    apiUrl: "https://legacy.robi2.hu/hetrix.php"
+  },
+  hasznosApiUrl: "https://legacy.robi2.hu/hasznos-api/"
 };
 
 /*

@@ -34,11 +34,14 @@
 	}
 
 	.dark {
+    --red: #f93a3a;
+    --red-lightest: #2a1617;
     --bg: #0D1117;
     --post-list-item-bg: #181818;
 		--menu: rgba(82,0,0,.4);
 		--menu-item: rgba(255,255,255,0.69);
 		--text-color: #aaa;
+    --btn-light-hover: #461616;
 	}
 body {
 	background: var(--bg) !important;
@@ -82,14 +85,16 @@ h1 {
 .button-light {
   @extend .btn;
   background: var(--btn-light);
-  color: var(--text-color);
+  color: var(--red) !important;
   box-shadow: none;
+  font-weight: 600 !important;
   &:hover {
     box-shadow: none;
     background: var(--btn-light-hover);
     color:var(--text-color);
   }
 }
+
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

@@ -13,6 +13,7 @@ import {
   animate,
   keyframes
 } from '@angular/animations';
+import { faChevronsLeft } from '@fortawesome/pro-duotone-svg-icons';
 import { faBlockQuestion } from '@fortawesome/pro-solid-svg-icons';
 import { SinglePost } from '../models/single-post';
 import { PostsService } from '../post.service';
@@ -38,6 +39,8 @@ export class PostSingleComponent implements OnInit {
   isFeaturedImageLoaded: boolean = false;
   loaded: boolean = false;
   faCalendarAlt = faCalendarAlt;
+
+  backToPostsIcon = faChevronsLeft
 
   faBlockQuestion = faBlockQuestion;
 

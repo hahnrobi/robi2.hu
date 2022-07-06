@@ -1,6 +1,6 @@
 <a routerLink="/{{post.slug}}" style="text-decoration: none; margin-bottom: 40px; display: block">
 <div class="post">
-  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap" [ngClass]="{'post-reverse': this.index % 2 === 0}">
+  <div class="post-inner d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap">
     <div class="featured-image" [ngStyle]="{'background-image': 'url('+this.featuredImage+')'}">
       <div class="image-hover-icon">
         <fa-icon [icon]="faBookOpen" ></fa-icon>
@@ -10,7 +10,12 @@
       <div class="hover-overlay"></div>
       <img class="featured-image-preload" (load)="this.imageLoading = false; this.setFeaturedImage()" style="display: none" src="{{ this.featuredImage }}" />
     </div>
-    <div class="p-5 post-details">
+    <div class="pl-5 pr-5 pb-5 pt-3 post-details">
+      
+      <h1>{{ post.title }}</h1>
+      <p class="post-excerpt">
+        {{post.excerpt}}
+      </p>
       <div class="post-meta d-flex align-items-center justify-content-sm-center justify-content-md-start ml-1 row">
         <div class="post-author col-s12 col-md6 mt-1">
           <img style="width: 32px" src="{{ post.author.profilePicture }}" />{{post.author.name}}
@@ -20,10 +25,6 @@
           {{ post.publishDate | date:'yyyy.MM.dd.' }}
         </div>
       </div>
-      <h1>{{ post.title }}</h1>
-      <p class="post-excerpt">
-        {{post.excerpt}}
-      </p>
     </div>
 
   </div>

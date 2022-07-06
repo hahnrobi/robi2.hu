@@ -1,6 +1,8 @@
 import { HttpClient, HttpEvent, HttpEventType, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { faDownload } from '@fortawesome/pro-duotone-svg-icons';
 import { Observable } from 'rxjs/internal/Observable';
+import { environment } from 'src/environments/environment';
 import { WebFile } from './webfile';
 
 @Component({
@@ -12,6 +14,8 @@ export class HasznosFileListItemComponent {
 
   @Input() file:WebFile;
   @Input() password:string
+
+  dlIcon = faDownload;
 
   dlProgress:string|null;
   dlProgressPercent:number;
@@ -26,7 +30,7 @@ export class HasznosFileListItemComponent {
       }),
       responseType: 'blob'
     };
-    return this.http.get("/hasznos-api/getfile.php?file=" + uri, {
+    return this.http.get(environment.hasznosApiUrl + "getfile.php?file=" + uri, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + this.password),
       observe: 'events',
       reportProgress: true,

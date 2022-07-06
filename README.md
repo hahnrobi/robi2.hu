@@ -14,9 +14,10 @@ I only working on this site in parts of my free time, so obviously it's far from
 ## Roadmap
 - Test: There's no test specified yet, which is a big mistake.
 - ~~My own blog API with content delivery: I would like to do this with NestJS.~~ ✅ DONE! [More info](https://robi2.hu/custom-blog-api)
-- Refactor SCSS: Make it more structured and readable.
+- ~~Refactor SCSS: Make it more structured and readable.~~✅ DONE!
 - Multilang: Site content language is only hungarian, but it would be better if the site is also available in english.
 - ~~CI/CD: Automatic deploy to the web with GitHub Actions.~~ ✅ DONE!
+- Editing backend with Wysiwyg editor like Editor.js
 
 ## Development server
 

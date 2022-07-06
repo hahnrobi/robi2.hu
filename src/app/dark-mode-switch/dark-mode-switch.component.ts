@@ -1,5 +1,7 @@
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { faSun, } from  '@fortawesome/pro-duotone-svg-icons';
+import { faSpaceStationMoonConstruction } from '@fortawesome/pro-solid-svg-icons'
 
 @Component({
   selector: 'dark-mode-switch',
@@ -15,6 +17,8 @@ export class DarkModeSwitchComponent implements OnInit {
     }
   }
 
+  sunIcon = faSun;
+  moonIcon = faSpaceStationMoonConstruction;
 
   validLightModes = ["light", "dark"];
   currentLightMode: string | null = null;

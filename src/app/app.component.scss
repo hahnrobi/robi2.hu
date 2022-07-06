@@ -154,18 +154,18 @@ nav {
 
 
 footer {
-	background: #c90415;
-	color: #FFF;
+	background: var(--red);
+	color: var(--red-50);
 	div.social-icons {
 		padding: 5px;
 		a {
-			color: white;
+			color: var(--red-50);
 			margin-right: 5px;
 			margin-left: 5px;
 			font-size: 1.3rem;
 			transition: .3s all;
 			&:hover {
-				color: rgba(255,255,255,.7);
+				color: var(--red-100);
 			}
 		}
 	}

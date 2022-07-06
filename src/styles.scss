@@ -11,12 +11,24 @@
 	--menu: rgba(255,255,255,1);
   --menu-item: rgba(61,61,61,1);
   --red: #c90415;
+  --red-50: #FFEBED;
+  --red-100: #FD9BA3;
+  --red-200: #FC5F6c;
+  --red-300: #FB2335;
+  --red-400: #FA0F23;
+  --red-500: var(--red);
+  --red-600: #A00310;
+  --red-700: #8C030E;
+  --red-800: #64020A;
+  --red-900: #3C0106;
   --btn: var(--red);
-  --btn-hover: #D12938;
+  --btn-hover: var(--red-300);
   --btn-light: transparent;
   --btn-light-hover: #dfdfdf;
-  --red-light: #b34f58;
-  --red-lightest: #ffe6e8;
+  --red-light: var(--red-400);
+  --red-lightest: var(--red-50);
+  --uptime-ok: #00d500;
+  --uptime-warning: #ffd403;
 	}
 	.light {
 	}

@@ -21,13 +21,13 @@
 		margin-right: 1rem;
 		margin-left: 1rem;
 		&.online {
-			background: #00d500;
+			background: var(--uptime-ok);
 		}
 		&.offline {
 			background: var(--red);
 		}
 		&.lag {
-			background: #ffd403 !important;
+			background: var(--uptime-warning) !important;
 		}
 	}
 	.info {

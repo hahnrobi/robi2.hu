@@ -18,7 +18,7 @@ article {
     p.article-featured-image-copyright {
       float: right;
       margin: 0;
-      color: #ababab;
+      color: var(--gray-500);
       font-style: italic;
       mix-blend-mode: luminosity;
       padding: 5px 15px 5px 5px;
@@ -135,7 +135,7 @@ article {
   div.post-author {
     padding: 10px;
     padding-left: 0;
-    color: #c90415 !important;
+    color: var(--red) !important;
     font-family: "Roboto Condensed";
     font-weight: 700;
     font-size: 16px;
@@ -152,9 +152,9 @@ article {
     font-weight: 700;
     font-size: 16px;
     margin-left:20px;
-    color: #555;
+    color:var(--gray-600);
     fa-icon {
-      color: #bababa;
+      color: var(--gray-400);
       margin-right: 10px;
     }
   }

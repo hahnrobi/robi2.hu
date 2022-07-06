@@ -1,6 +1,6 @@
-$color: #E02F1B;
-$colorRight: #710302;
-$colorLeft: #A80508;
+$color: var(--red);
+$colorRight: var(--red-400);
+$colorLeft: var(--red-300);
 
 .infinity {
     width: 120px;

@@ -27,7 +27,7 @@ import { PostsService } from '../post.service';
   ],
   animations: [
     trigger('bgImgTrigger', [
-      transition(":enter", [style({transform: 'scaleX(0) scaleY(0)'}), animate('500ms ease')])
+      transition(":enter", [style({transform: 'translateY(500px)'}), animate('500ms ease')])
     ])
   ],
   encapsulation: ViewEncapsulation.None
@@ -71,7 +71,7 @@ export class PostSingleComponent implements OnInit {
           this.hasFeaturedImage = true;
         }
         this.loaded = true;
-       }, 0)
+       }, 500)
     },
     error: err => {
       this.router.navigate(["404"]);

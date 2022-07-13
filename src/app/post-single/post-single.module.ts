@@ -7,6 +7,7 @@ import { PostSingleComponent } from './post-single.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
+import { LoaderAnimationModule } from '../loader-animation/loader-animation.module';
 const routes: Routes = [
   {
     path: ':id',
@@ -22,6 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ShowdownModule.forRoot({extensions: [highlight, headingLink] }),
     FontAwesomeModule,
+    LoaderAnimationModule,
     SharedModule
   ]
 })

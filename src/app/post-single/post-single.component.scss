@@ -120,6 +120,9 @@ article {
       .raw-code {
         display: none;
       }
+      pre {
+        white-space: pre-wrap;
+      }
       code.hljs {
 
       }

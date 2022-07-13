@@ -30,7 +30,7 @@ import { PostsService } from '../post.service';
       transition(":enter", [style({transform: 'translateY(500px)'}), animate('500ms ease')])
     ])
   ],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class PostSingleComponent implements OnInit {
 

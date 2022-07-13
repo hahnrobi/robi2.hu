@@ -29,8 +29,7 @@ import { PostsService } from '../post.service';
     trigger('bgImgTrigger', [
       transition(":enter", [style({transform: 'translateY(500px)'}), animate('500ms ease')])
     ])
-  ],
-  //encapsulation: ViewEncapsulation.None
+  ]
 })
 export class PostSingleComponent implements OnInit {
 

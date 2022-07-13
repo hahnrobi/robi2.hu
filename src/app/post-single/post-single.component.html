@@ -1,7 +1,6 @@
 
 <div class="loader" *ngIf="!this.loaded">
-  <app-loader-animation>
-    </app-loader-animation>
+
 </div>
 <div *ngIf="this.loaded" style="margin-top: 10px">
 <button [routerLink]="['/posts']" class="button button-light mb-2 back-to-posts-btn"><fa-icon [icon]="backToPostsIcon"></fa-icon>Vissza a posztokhoz</button>
